@@ -1,0 +1,17 @@
+D:\GitHub\recipe_organizer\recipe_organizer\bin\Debug\net8.0-windows\recipe_organizer.exe
+D:\GitHub\recipe_organizer\recipe_organizer\bin\Debug\net8.0-windows\recipe_organizer.deps.json
+D:\GitHub\recipe_organizer\recipe_organizer\bin\Debug\net8.0-windows\recipe_organizer.runtimeconfig.json
+D:\GitHub\recipe_organizer\recipe_organizer\bin\Debug\net8.0-windows\recipe_organizer.dll
+D:\GitHub\recipe_organizer\recipe_organizer\bin\Debug\net8.0-windows\recipe_organizer.pdb
+D:\GitHub\recipe_organizer\recipe_organizer\obj\Debug\net8.0-windows\recipe_organizer.MainWindow.resources
+D:\GitHub\recipe_organizer\recipe_organizer\obj\Debug\net8.0-windows\recipe_organizer.csproj.GenerateResource.cache
+D:\GitHub\recipe_organizer\recipe_organizer\obj\Debug\net8.0-windows\recipe_organizer.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\recipe_organizer\recipe_organizer\obj\Debug\net8.0-windows\recipe_organizer.AssemblyInfoInputs.cache
+D:\GitHub\recipe_organizer\recipe_organizer\obj\Debug\net8.0-windows\recipe_organizer.AssemblyInfo.cs
+D:\GitHub\recipe_organizer\recipe_organizer\obj\Debug\net8.0-windows\recipe_organizer.csproj.CoreCompileInputs.cache
+D:\GitHub\recipe_organizer\recipe_organizer\obj\Debug\net8.0-windows\recipe_organizer.sourcelink.json
+D:\GitHub\recipe_organizer\recipe_organizer\obj\Debug\net8.0-windows\recipe_organizer.dll
+D:\GitHub\recipe_organizer\recipe_organizer\obj\Debug\net8.0-windows\refint\recipe_organizer.dll
+D:\GitHub\recipe_organizer\recipe_organizer\obj\Debug\net8.0-windows\recipe_organizer.pdb
+D:\GitHub\recipe_organizer\recipe_organizer\obj\Debug\net8.0-windows\recipe_organizer.genruntimeconfig.cache
+D:\GitHub\recipe_organizer\recipe_organizer\obj\Debug\net8.0-windows\ref\recipe_organizer.dll
