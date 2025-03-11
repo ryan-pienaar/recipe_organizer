@@ -40,7 +40,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(424, 137);
+            button1.Location = new Point(422, 129);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 0;
@@ -79,13 +79,13 @@
             // singleRecipeToolStripMenuItem
             // 
             singleRecipeToolStripMenuItem.Name = "singleRecipeToolStripMenuItem";
-            singleRecipeToolStripMenuItem.Size = new Size(180, 22);
+            singleRecipeToolStripMenuItem.Size = new Size(144, 22);
             singleRecipeToolStripMenuItem.Text = "Single Recipe";
             // 
             // allRecipesToolStripMenuItem
             // 
             allRecipesToolStripMenuItem.Name = "allRecipesToolStripMenuItem";
-            allRecipesToolStripMenuItem.Size = new Size(180, 22);
+            allRecipesToolStripMenuItem.Size = new Size(144, 22);
             allRecipesToolStripMenuItem.Text = "All Recipes";
             // 
             // MainWindow
