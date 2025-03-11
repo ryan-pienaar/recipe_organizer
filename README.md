@@ -41,8 +41,9 @@ Notes:
 
 9. **Recipe Editing and Customization**  [Shannon -> Frontend -> Code] [Ryan -> Backend Persistant JSON]
 Description: Users can modify existing recipes or add new ones manually.  
-Benefits: Allows for personalization and adaptation of recipes to suit individual tastes.  
-
+Benefits: Allows for personalization and adaptation of recipes to suit individual tastes.    
+Notes:
+- 
 
 11. **Recipe Sharing**  [Shannon -> Frontend | Code]
 Description: Users can share recipes via email with the generated text file.  
