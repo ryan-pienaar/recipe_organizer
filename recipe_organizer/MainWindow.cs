@@ -16,18 +16,22 @@ namespace recipe_organizer
             DataGridViewButtonColumn viewButtonCol = new DataGridViewButtonColumn();
             DataGridViewButtonColumn editButtonCol = new DataGridViewButtonColumn();
             DataGridViewButtonColumn deleteButtonCol = new DataGridViewButtonColumn();
+            DataGridViewButtonColumn addToPlannerButtonCol = new DataGridViewButtonColumn();
 
             viewButtonCol.HeaderText = "";
             editButtonCol.HeaderText = "";
             deleteButtonCol.HeaderText = "";
+            addToPlannerButtonCol.HeaderText = "";
 
             viewButtonCol.UseColumnTextForButtonValue = true;
             editButtonCol.UseColumnTextForButtonValue = true;
             deleteButtonCol.UseColumnTextForButtonValue = true;
+            addToPlannerButtonCol.UseColumnTextForButtonValue = true;
 
             viewButtonCol.Text = "View";
             editButtonCol.Text = "Edit";
             deleteButtonCol.Text = "Delete";
+            addToPlannerButtonCol.Text = "Add to Planner";
 
             //.DataSource = Book.Recipes.ToList();
             var recipeViewList = Book.Recipes.OrderBy(n => n.Name).Select(n => new
@@ -41,6 +45,7 @@ namespace recipe_organizer
             dataGridViewRecipes.Columns.Add(viewButtonCol);
             dataGridViewRecipes.Columns.Add(editButtonCol);
             dataGridViewRecipes.Columns.Add(deleteButtonCol);
+            dataGridViewRecipes.Columns.Add(addToPlannerButtonCol);
         }
 
         private void SetUpData()
@@ -96,20 +101,28 @@ namespace recipe_organizer
             const int viewIndex = 3;
             const int editIndex = 4;
             const int deleteIndex = 5;
+            const int plannerIndex = 6;
+
+            string? recipeName = dataGridViewRecipes.Rows[e.RowIndex].Cells[0].Value.ToString();
 
             if (e.ColumnIndex == viewIndex)
             {
-                MessageBox.Show("Viewing the recipe...");
+                MessageBox.Show("Viewing the recipe: " + recipeName);
             }
 
             if (e.ColumnIndex == editIndex)
             {
-                MessageBox.Show("Editing the recipe...");
+                MessageBox.Show("Editing the recipe: " + recipeName);
             }
 
             if (e.ColumnIndex == deleteIndex)
             {
-                MessageBox.Show("Deleting the recipe...");
+                MessageBox.Show("Deleting the recipe: " + recipeName);
+            }
+
+            if (e.ColumnIndex == plannerIndex)
+            {
+                MessageBox.Show("Planning the recipe: " + recipeName);
             }
         }
     }
