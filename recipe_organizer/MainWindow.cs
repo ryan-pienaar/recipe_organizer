@@ -30,10 +30,11 @@ namespace recipe_organizer
             deleteButtonCol.Text = "Delete";
 
             //.DataSource = Book.Recipes.ToList();
-            var recipeViewList = Book.Recipes.OrderBy(n => n.Name).Select(n => new { 
-                n.Name, 
-                n.Description, 
-                n.TotalTime 
+            var recipeViewList = Book.Recipes.OrderBy(n => n.Name).Select(n => new
+            {
+                n.Name,
+                n.Description,
+                n.TotalTime
             }).ToList();
             dataGridViewRecipes.DataSource = recipeViewList;
 
@@ -88,6 +89,28 @@ namespace recipe_organizer
             Book.Add(recipe_ex_1);
             Book.Add(recipe_ex_2);
             Book.Add(recipe_ex_3);
+        }
+
+        private void dataGridViewRecipes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            const int viewIndex = 3;
+            const int editIndex = 4;
+            const int deleteIndex = 5;
+
+            if (e.ColumnIndex == viewIndex)
+            {
+                MessageBox.Show("Viewing the recipe...");
+            }
+
+            if (e.ColumnIndex == editIndex)
+            {
+                MessageBox.Show("Editing the recipe...");
+            }
+
+            if (e.ColumnIndex == deleteIndex)
+            {
+                MessageBox.Show("Deleting the recipe...");
+            }
         }
     }
 }

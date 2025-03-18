@@ -272,6 +272,7 @@
             dataGridViewRecipes.Name = "dataGridViewRecipes";
             dataGridViewRecipes.Size = new Size(741, 193);
             dataGridViewRecipes.TabIndex = 8;
+            dataGridViewRecipes.CellClick += dataGridViewRecipes_CellClick;
             // 
             // MainWindow
             // 
