@@ -8,9 +8,11 @@ namespace recipe_organizer
 {
     internal class Book
     {
-        public List<Recipe> recipes { get; set; }
+        public List<Recipe> Recipes { get; set; }
 
-        public Book() { }
+        public Book() { 
+            Recipes = new List<Recipe>();
+        }
 
         public Book(string JSONFilePath)
         {
@@ -20,6 +22,11 @@ namespace recipe_organizer
         public void ImportRecipes(string JSONFilePath)
         {
             //TODO : Import recipes from JSON file into list<Recipe> recipes
+        }
+
+        public void Add(Recipe recipe)
+        {
+            Recipes.Add(recipe);
         }
 
 

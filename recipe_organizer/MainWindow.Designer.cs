@@ -35,29 +35,30 @@
             singleRecipeToolStripMenuItem = new ToolStripMenuItem();
             allRecipesToolStripMenuItem = new ToolStripMenuItem();
             searchToolStripMenuItem = new ToolStripMenuItem();
-            plannerToolStripMenuItem = new ToolStripMenuItem();
             byCategoryToolStripMenuItem = new ToolStripMenuItem();
             recipeToolStripMenuItem = new ToolStripMenuItem();
             createNewToolStripMenuItem = new ToolStripMenuItem();
+            plannerToolStripMenuItem = new ToolStripMenuItem();
             listViewRecipeCategory = new ListView();
-            listViewRecipe = new ListView();
             groupBoxRecipeOptions = new GroupBox();
-            btnViewRecipe = new Button();
-            btnEditRecipe = new Button();
-            btnGenerateShopList = new Button();
-            groupBoxShopList = new GroupBox();
-            rtbShopList = new RichTextBox();
-            btnSaveShopList = new Button();
-            btnDeleteRecipe = new Button();
-            button1 = new Button();
-            lblNumServings = new Label();
             nudNumServings = new NumericUpDown();
+            lblNumServings = new Label();
+            button1 = new Button();
+            btnDeleteRecipe = new Button();
+            btnGenerateShopList = new Button();
+            btnEditRecipe = new Button();
+            btnViewRecipe = new Button();
+            groupBoxShopList = new GroupBox();
+            btnSaveShopList = new Button();
+            rtbShopList = new RichTextBox();
             lblSelectCategory = new Label();
             lblSelectRecipe = new Label();
+            dataGridViewRecipes = new DataGridView();
             menuStrip.SuspendLayout();
             groupBoxRecipeOptions.SuspendLayout();
-            groupBoxShopList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudNumServings).BeginInit();
+            groupBoxShopList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewRecipes).BeginInit();
             SuspendLayout();
             // 
             // menuStrip
@@ -79,26 +80,26 @@
             // importToolStripMenuItem
             // 
             importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new Size(180, 22);
+            importToolStripMenuItem.Size = new Size(110, 22);
             importToolStripMenuItem.Text = "Import";
             // 
             // exportToolStripMenuItem
             // 
             exportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { singleRecipeToolStripMenuItem, allRecipesToolStripMenuItem });
             exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new Size(180, 22);
+            exportToolStripMenuItem.Size = new Size(110, 22);
             exportToolStripMenuItem.Text = "Export";
             // 
             // singleRecipeToolStripMenuItem
             // 
             singleRecipeToolStripMenuItem.Name = "singleRecipeToolStripMenuItem";
-            singleRecipeToolStripMenuItem.Size = new Size(180, 22);
+            singleRecipeToolStripMenuItem.Size = new Size(144, 22);
             singleRecipeToolStripMenuItem.Text = "Single Recipe";
             // 
             // allRecipesToolStripMenuItem
             // 
             allRecipesToolStripMenuItem.Name = "allRecipesToolStripMenuItem";
-            allRecipesToolStripMenuItem.Size = new Size(180, 22);
+            allRecipesToolStripMenuItem.Size = new Size(144, 22);
             allRecipesToolStripMenuItem.Text = "All Recipes";
             // 
             // searchToolStripMenuItem
@@ -108,16 +109,10 @@
             searchToolStripMenuItem.Size = new Size(54, 20);
             searchToolStripMenuItem.Text = "Search";
             // 
-            // plannerToolStripMenuItem
-            // 
-            plannerToolStripMenuItem.Name = "plannerToolStripMenuItem";
-            plannerToolStripMenuItem.Size = new Size(59, 20);
-            plannerToolStripMenuItem.Text = "Planner";
-            // 
             // byCategoryToolStripMenuItem
             // 
             byCategoryToolStripMenuItem.Name = "byCategoryToolStripMenuItem";
-            byCategoryToolStripMenuItem.Size = new Size(180, 22);
+            byCategoryToolStripMenuItem.Size = new Size(138, 22);
             byCategoryToolStripMenuItem.Text = "By Category";
             // 
             // recipeToolStripMenuItem
@@ -130,8 +125,14 @@
             // createNewToolStripMenuItem
             // 
             createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
-            createNewToolStripMenuItem.Size = new Size(180, 22);
+            createNewToolStripMenuItem.Size = new Size(135, 22);
             createNewToolStripMenuItem.Text = "Create New";
+            // 
+            // plannerToolStripMenuItem
+            // 
+            plannerToolStripMenuItem.Name = "plannerToolStripMenuItem";
+            plannerToolStripMenuItem.Size = new Size(59, 20);
+            plannerToolStripMenuItem.Text = "Planner";
             // 
             // listViewRecipeCategory
             // 
@@ -140,14 +141,6 @@
             listViewRecipeCategory.Size = new Size(144, 446);
             listViewRecipeCategory.TabIndex = 2;
             listViewRecipeCategory.UseCompatibleStateImageBehavior = false;
-            // 
-            // listViewRecipe
-            // 
-            listViewRecipe.Location = new Point(196, 56);
-            listViewRecipe.Name = "listViewRecipe";
-            listViewRecipe.Size = new Size(219, 446);
-            listViewRecipe.TabIndex = 3;
-            listViewRecipe.UseCompatibleStateImageBehavior = false;
             // 
             // groupBoxRecipeOptions
             // 
@@ -158,85 +151,19 @@
             groupBoxRecipeOptions.Controls.Add(btnGenerateShopList);
             groupBoxRecipeOptions.Controls.Add(btnEditRecipe);
             groupBoxRecipeOptions.Controls.Add(btnViewRecipe);
-            groupBoxRecipeOptions.Location = new Point(439, 56);
+            groupBoxRecipeOptions.Location = new Point(174, 255);
             groupBoxRecipeOptions.Name = "groupBoxRecipeOptions";
             groupBoxRecipeOptions.Size = new Size(434, 253);
             groupBoxRecipeOptions.TabIndex = 4;
             groupBoxRecipeOptions.TabStop = false;
             groupBoxRecipeOptions.Text = "Options";
             // 
-            // btnViewRecipe
+            // nudNumServings
             // 
-            btnViewRecipe.Location = new Point(27, 34);
-            btnViewRecipe.Name = "btnViewRecipe";
-            btnViewRecipe.Size = new Size(75, 23);
-            btnViewRecipe.TabIndex = 0;
-            btnViewRecipe.Text = "View";
-            btnViewRecipe.UseVisualStyleBackColor = true;
-            // 
-            // btnEditRecipe
-            // 
-            btnEditRecipe.Location = new Point(134, 34);
-            btnEditRecipe.Name = "btnEditRecipe";
-            btnEditRecipe.Size = new Size(75, 23);
-            btnEditRecipe.TabIndex = 1;
-            btnEditRecipe.Text = "Edit";
-            btnEditRecipe.UseVisualStyleBackColor = true;
-            // 
-            // btnGenerateShopList
-            // 
-            btnGenerateShopList.Location = new Point(27, 208);
-            btnGenerateShopList.Name = "btnGenerateShopList";
-            btnGenerateShopList.Size = new Size(190, 23);
-            btnGenerateShopList.TabIndex = 2;
-            btnGenerateShopList.Text = "Generate Shopping List";
-            btnGenerateShopList.UseVisualStyleBackColor = true;
-            // 
-            // groupBoxShopList
-            // 
-            groupBoxShopList.Controls.Add(btnSaveShopList);
-            groupBoxShopList.Controls.Add(rtbShopList);
-            groupBoxShopList.Location = new Point(439, 326);
-            groupBoxShopList.Name = "groupBoxShopList";
-            groupBoxShopList.Size = new Size(434, 182);
-            groupBoxShopList.TabIndex = 5;
-            groupBoxShopList.TabStop = false;
-            groupBoxShopList.Text = "Shopping List";
-            // 
-            // rtbShopList
-            // 
-            rtbShopList.Location = new Point(6, 22);
-            rtbShopList.Name = "rtbShopList";
-            rtbShopList.Size = new Size(341, 154);
-            rtbShopList.TabIndex = 0;
-            rtbShopList.Text = "";
-            // 
-            // btnSaveShopList
-            // 
-            btnSaveShopList.Location = new Point(353, 153);
-            btnSaveShopList.Name = "btnSaveShopList";
-            btnSaveShopList.Size = new Size(75, 23);
-            btnSaveShopList.TabIndex = 3;
-            btnSaveShopList.Text = "Save";
-            btnSaveShopList.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteRecipe
-            // 
-            btnDeleteRecipe.Location = new Point(272, 34);
-            btnDeleteRecipe.Name = "btnDeleteRecipe";
-            btnDeleteRecipe.Size = new Size(75, 23);
-            btnDeleteRecipe.TabIndex = 3;
-            btnDeleteRecipe.Text = "Delete";
-            btnDeleteRecipe.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(27, 141);
-            button1.Name = "button1";
-            button1.Size = new Size(106, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Add to Planner";
-            button1.UseVisualStyleBackColor = true;
+            nudNumServings.Location = new Point(89, 93);
+            nudNumServings.Name = "nudNumServings";
+            nudNumServings.Size = new Size(120, 23);
+            nudNumServings.TabIndex = 6;
             // 
             // lblNumServings
             // 
@@ -247,12 +174,78 @@
             lblNumServings.TabIndex = 5;
             lblNumServings.Text = "Servings:";
             // 
-            // nudNumServings
+            // button1
             // 
-            nudNumServings.Location = new Point(89, 93);
-            nudNumServings.Name = "nudNumServings";
-            nudNumServings.Size = new Size(120, 23);
-            nudNumServings.TabIndex = 6;
+            button1.Location = new Point(27, 141);
+            button1.Name = "button1";
+            button1.Size = new Size(106, 23);
+            button1.TabIndex = 4;
+            button1.Text = "Add to Planner";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteRecipe
+            // 
+            btnDeleteRecipe.Location = new Point(272, 34);
+            btnDeleteRecipe.Name = "btnDeleteRecipe";
+            btnDeleteRecipe.Size = new Size(75, 23);
+            btnDeleteRecipe.TabIndex = 3;
+            btnDeleteRecipe.Text = "Delete";
+            btnDeleteRecipe.UseVisualStyleBackColor = true;
+            // 
+            // btnGenerateShopList
+            // 
+            btnGenerateShopList.Location = new Point(27, 208);
+            btnGenerateShopList.Name = "btnGenerateShopList";
+            btnGenerateShopList.Size = new Size(190, 23);
+            btnGenerateShopList.TabIndex = 2;
+            btnGenerateShopList.Text = "Generate Shopping List";
+            btnGenerateShopList.UseVisualStyleBackColor = true;
+            // 
+            // btnEditRecipe
+            // 
+            btnEditRecipe.Location = new Point(134, 34);
+            btnEditRecipe.Name = "btnEditRecipe";
+            btnEditRecipe.Size = new Size(75, 23);
+            btnEditRecipe.TabIndex = 1;
+            btnEditRecipe.Text = "Edit";
+            btnEditRecipe.UseVisualStyleBackColor = true;
+            // 
+            // btnViewRecipe
+            // 
+            btnViewRecipe.Location = new Point(27, 34);
+            btnViewRecipe.Name = "btnViewRecipe";
+            btnViewRecipe.Size = new Size(75, 23);
+            btnViewRecipe.TabIndex = 0;
+            btnViewRecipe.Text = "View";
+            btnViewRecipe.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxShopList
+            // 
+            groupBoxShopList.Controls.Add(btnSaveShopList);
+            groupBoxShopList.Controls.Add(rtbShopList);
+            groupBoxShopList.Location = new Point(614, 255);
+            groupBoxShopList.Name = "groupBoxShopList";
+            groupBoxShopList.Size = new Size(301, 253);
+            groupBoxShopList.TabIndex = 5;
+            groupBoxShopList.TabStop = false;
+            groupBoxShopList.Text = "Shopping List";
+            // 
+            // btnSaveShopList
+            // 
+            btnSaveShopList.Location = new Point(220, 224);
+            btnSaveShopList.Name = "btnSaveShopList";
+            btnSaveShopList.Size = new Size(75, 23);
+            btnSaveShopList.TabIndex = 3;
+            btnSaveShopList.Text = "Save";
+            btnSaveShopList.UseVisualStyleBackColor = true;
+            // 
+            // rtbShopList
+            // 
+            rtbShopList.Location = new Point(6, 22);
+            rtbShopList.Name = "rtbShopList";
+            rtbShopList.Size = new Size(208, 225);
+            rtbShopList.TabIndex = 0;
+            rtbShopList.Text = "";
             // 
             // lblSelectCategory
             // 
@@ -266,33 +259,43 @@
             // lblSelectRecipe
             // 
             lblSelectRecipe.AutoSize = true;
-            lblSelectRecipe.Location = new Point(209, 38);
+            lblSelectRecipe.Location = new Point(174, 38);
             lblSelectRecipe.Name = "lblSelectRecipe";
             lblSelectRecipe.Size = new Size(79, 15);
             lblSelectRecipe.TabIndex = 7;
             lblSelectRecipe.Text = "Select Recipe:";
+            // 
+            // dataGridViewRecipes
+            // 
+            dataGridViewRecipes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewRecipes.Location = new Point(174, 56);
+            dataGridViewRecipes.Name = "dataGridViewRecipes";
+            dataGridViewRecipes.Size = new Size(741, 193);
+            dataGridViewRecipes.TabIndex = 8;
             // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(927, 543);
+            Controls.Add(dataGridViewRecipes);
             Controls.Add(lblSelectRecipe);
             Controls.Add(lblSelectCategory);
             Controls.Add(groupBoxShopList);
             Controls.Add(groupBoxRecipeOptions);
-            Controls.Add(listViewRecipe);
             Controls.Add(listViewRecipeCategory);
             Controls.Add(menuStrip);
             MainMenuStrip = menuStrip;
             Name = "MainWindow";
             Text = "Recipe Organizer";
+            Load += MainWindow_Load;
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
             groupBoxRecipeOptions.ResumeLayout(false);
             groupBoxRecipeOptions.PerformLayout();
-            groupBoxShopList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)nudNumServings).EndInit();
+            groupBoxShopList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewRecipes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -310,7 +313,6 @@
         private ToolStripMenuItem recipeToolStripMenuItem;
         private ToolStripMenuItem createNewToolStripMenuItem;
         private ListView listViewRecipeCategory;
-        private ListView listViewRecipe;
         private GroupBox groupBoxRecipeOptions;
         private Button btnEditRecipe;
         private Button btnViewRecipe;
@@ -324,5 +326,6 @@
         private NumericUpDown nudNumServings;
         private Label lblSelectCategory;
         private Label lblSelectRecipe;
+        private DataGridView dataGridViewRecipes;
     }
 }

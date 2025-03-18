@@ -1,22 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GitHub\\recipe_organizer\\",
+  "WorkspaceRootPath": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|d:\\github\\recipe_organizer\\recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|d:\\github\\recipe_organizer\\recipe_organizer\\mainwindow.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\mainwindow.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|d:\\github\\recipe_organizer\\recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|d:\\github\\recipe_organizer\\recipe_organizer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,67 +21,56 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "DockedWidth": 182,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 218,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainWindow.Designer.cs",
-              "DocumentMoniker": "D:\\GitHub\\recipe_organizer\\recipe_organizer\\MainWindow.Designer.cs",
-              "RelativeDocumentMoniker": "recipe_organizer\\MainWindow.Designer.cs",
-              "ToolTip": "D:\\GitHub\\recipe_organizer\\recipe_organizer\\MainWindow.Designer.cs*",
-              "RelativeToolTip": "recipe_organizer\\MainWindow.Designer.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "MainWindow.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\MainWindow.cs",
+              "RelativeDocumentMoniker": "recipe_organizer\\MainWindow.cs",
+              "ToolTip": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\MainWindow.cs [Design]*",
+              "RelativeToolTip": "recipe_organizer\\MainWindow.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T13:43:38.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T12:04:50.115Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MainWindow.cs",
-              "DocumentMoniker": "D:\\GitHub\\recipe_organizer\\recipe_organizer\\MainWindow.cs",
-              "RelativeDocumentMoniker": "recipe_organizer\\MainWindow.cs",
-              "ToolTip": "D:\\GitHub\\recipe_organizer\\recipe_organizer\\MainWindow.cs*",
-              "RelativeToolTip": "recipe_organizer\\MainWindow.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\Book.cs",
+              "RelativeDocumentMoniker": "recipe_organizer\\Book.cs",
+              "ToolTip": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\Book.cs",
+              "RelativeToolTip": "recipe_organizer\\Book.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAD4vxwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T13:43:29.776Z",
+              "WhenOpened": "2025-03-18T11:24:26.677Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\GitHub\\recipe_organizer\\recipe_organizer\\Program.cs",
-              "RelativeDocumentMoniker": "recipe_organizer\\Program.cs",
-              "ToolTip": "D:\\GitHub\\recipe_organizer\\recipe_organizer\\Program.cs",
-              "RelativeToolTip": "recipe_organizer\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T13:37:50.929Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainWindow.cs [Design]",
-              "DocumentMoniker": "D:\\GitHub\\recipe_organizer\\recipe_organizer\\MainWindow.cs",
+              "Title": "MainWindow.cs",
+              "DocumentMoniker": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\MainWindow.cs",
               "RelativeDocumentMoniker": "recipe_organizer\\MainWindow.cs",
-              "ToolTip": "D:\\GitHub\\recipe_organizer\\recipe_organizer\\MainWindow.cs [Design]*",
-              "RelativeToolTip": "recipe_organizer\\MainWindow.cs [Design]*",
+              "ToolTip": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\MainWindow.cs*",
+              "RelativeToolTip": "recipe_organizer\\MainWindow.cs*",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAwB0AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T13:35:57.054Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-18T11:21:03.94Z",
+              "EditorCaption": ""
             }
           ]
         }

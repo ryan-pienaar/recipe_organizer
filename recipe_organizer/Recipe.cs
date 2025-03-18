@@ -20,14 +20,14 @@ namespace recipe_organizer
         public List<string> Ingredients { get; set; }
         public List<string> Instructions { get; set; }
 
-        public Recipe(string name, string description, string photoFilePath, double prepTime, double cookTime, string category, int servings, int calories, List<string> ingredients, List<string> instructions)
+        public Recipe(string name, string description, string photoFilePath, double prepTime, double cookTime, List<string> categories, int servings, int calories, List<string> ingredients, List<string> instructions)
         {
             Name = name;
             Description = description;
             PhotoFilePath = photoFilePath;
             PrepTime = prepTime;
             CookTime = cookTime;
-            Category = category;
+            Categories = categories;
             Servings = servings;
             Calories = calories;
             Ingredients = ingredients;
@@ -41,7 +41,7 @@ namespace recipe_organizer
             PhotoFilePath = "";
             PrepTime = 0;
             CookTime = 0;
-            Category = "";
+            Categories = new List<string>();
             Servings = 0;
             Calories = 0;
             Ingredients = new List<string>();
