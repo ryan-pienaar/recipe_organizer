@@ -133,7 +133,30 @@ namespace recipe_organizer
 
         private void importToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Opens a file dialog to select a file
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "JSON files (*.json)|*.json";
+            openFileDialog.Title = "Select a JSON file to import";
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Export\\";
+            string selectedFilePath = "";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                selectedFilePath = openFileDialog.FileName;
+                MessageBox.Show("Selected file: " + selectedFilePath);
+            }
+            Book.ImportRecipes(selectedFilePath);
+            var recipeViewList = Book.Recipes.OrderBy(n => n.Name).Select(n => new
+            {
+                n.Name,
+                n.Description,
+                n.TotalTime
+            }).ToList();
+            dataGridViewRecipes.DataSource = recipeViewList;
+        }
 
+        private void OpenFileDialog_FileOk(object? sender, System.ComponentModel.CancelEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void singleRecipeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -143,13 +166,8 @@ namespace recipe_organizer
 
         private void allRecipesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string json = JsonConvert.SerializeObject(Book, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(Book.Recipes, Formatting.Indented);
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Export\\ExportedRecipes-" + getFileIDString() + ".json";
-            //if (!File.Exists(path))
-            //{
-            //    File.Create(path);
-            //    File.
-            //}
             File.WriteAllText(path, json);
         }
 

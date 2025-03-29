@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace recipe_organizer
 {
@@ -21,7 +22,13 @@ namespace recipe_organizer
 
         public void ImportRecipes(string JSONFilePath)
         {
-            //TODO : Import recipes from JSON file into list<Recipe> recipes
+            List<Recipe> ImportedRecipes = new List<Recipe>();
+            string JSONString = System.IO.File.ReadAllText(JSONFilePath);
+            ImportedRecipes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Recipe>>(JSONString);
+            foreach (Recipe recipe in ImportedRecipes)
+            {
+                Recipes.Add(recipe);
+            }
         }
 
         public void Add(Recipe recipe)

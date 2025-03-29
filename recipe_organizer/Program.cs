@@ -16,6 +16,7 @@ namespace recipe_organizer
                 Directory.CreateDirectory(path);
                 Directory.CreateDirectory(path + "\\Data");
                 Directory.CreateDirectory(path + "\\Export");
+                Directory.CreateDirectory(path + "\\Import");
             }
 
             // To customize application configuration such as set high DPI settings or default font,
