@@ -10,10 +10,10 @@ namespace recipe_organizer
 
         Book Book = new Book();
 
-        public MainWindow()
+        public MainWindow(string JSONData)
         {
             InitializeComponent();
-            SetUpData();
+            SetUpData(JSONData);
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -53,52 +53,34 @@ namespace recipe_organizer
             dataGridViewRecipes.Columns.Add(addToPlannerButtonCol);
         }
 
-        private void SetUpData()
+        private void SetUpData(string JSONData)
         {
-            List<string> categories_ex_1 = new List<string>();
-            categories_ex_1.Add("Pasta");
-            categories_ex_1.Add("Italian");
-            List<string> ingredients_ex_1 = new List<string>();
-            ingredients_ex_1.Add("Pancetta");
-            ingredients_ex_1.Add("Spaghetti");
-            ingredients_ex_1.Add("Whipping Cream");
-            ingredients_ex_1.Add("Parmesan");
-            List<string> instructions_ex_1 = new List<string>();
-            instructions_ex_1.Add("Prep it");
-            instructions_ex_1.Add("Cook it");
-            instructions_ex_1.Add("Eat it");
-            Recipe recipe_ex_1 = new Recipe("Carbonara", "Pasta Carbonara made with cream", "C:/test.png", 600, 300, categories_ex_1, 2, 1100, ingredients_ex_1, instructions_ex_1);
+            //List<string> categories_ex_1 = new List<string>();
+            //categories_ex_1.Add("Pasta");
+            //categories_ex_1.Add("Italian");
+            //List<string> ingredients_ex_1 = new List<string>();
+            //ingredients_ex_1.Add("Pancetta");
+            //ingredients_ex_1.Add("Spaghetti");
+            //ingredients_ex_1.Add("Whipping Cream");
+            //ingredients_ex_1.Add("Parmesan");
+            //List<string> instructions_ex_1 = new List<string>();
+            //instructions_ex_1.Add("Prep it");
+            //instructions_ex_1.Add("Cook it");
+            //instructions_ex_1.Add("Eat it");
+            //Recipe recipe_ex_1 = new Recipe("Carbonara", "Pasta Carbonara made with cream", "C:/test.png", 600, 300, categories_ex_1, 2, 1100, ingredients_ex_1, instructions_ex_1);
 
-            List<string> categories_ex_2 = new List<string>();
-            categories_ex_2.Add("Toasted");
-            categories_ex_2.Add("Comfort");
-            List<string> ingredients_ex_2 = new List<string>();
-            ingredients_ex_2.Add("Bread");
-            ingredients_ex_2.Add("Sliced Ham");
-            ingredients_ex_2.Add("Cheddar Cheese");
-            List<string> instructions_ex_2 = new List<string>();
-            instructions_ex_2.Add("Prep it");
-            instructions_ex_2.Add("Cook it");
-            instructions_ex_2.Add("Eat it");
-            Recipe recipe_ex_2 = new Recipe("Toasted Hame & Cheese", "Ham & Cheese the right way", "C:/test.png", 200, 500, categories_ex_2, 1, 600, ingredients_ex_2, instructions_ex_2);
+            //Book.Add(recipe_ex_1);
 
-            List<string> categories_ex_3 = new List<string>();
-            categories_ex_3.Add("Pizza");
-            categories_ex_3.Add("Italian");
-            List<string> ingredients_ex_3 = new List<string>();
-            ingredients_ex_3.Add("Pizza Dough");
-            ingredients_ex_3.Add("Chicken");
-            ingredients_ex_3.Add("BBQ Sauce");
-            ingredients_ex_3.Add("Pepperoni");
-            List<string> instructions_ex_3 = new List<string>();
-            instructions_ex_3.Add("Prep it");
-            instructions_ex_3.Add("Cook it");
-            instructions_ex_3.Add("Eat it");
-            Recipe recipe_ex_3 = new Recipe("BBQ Chicken Pizza", "BBQ Chicken pizza made the right way", "C:/test.png", 30000, 360, categories_ex_1, 2, 1200, ingredients_ex_1, instructions_ex_1);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Data\\data.json";
+            Book.ImportRecipes(path);
+        }
 
-            Book.Add(recipe_ex_1);
-            Book.Add(recipe_ex_2);
-            Book.Add(recipe_ex_3);
+        //Save recipe data on window closure
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Data\\data.json";
+            string json = JsonConvert.SerializeObject(Book.Recipes, Formatting.Indented);
+            File.WriteAllText(path, json);
         }
 
         private void dataGridViewRecipes_CellClick(object sender, DataGridViewCellEventArgs e)
