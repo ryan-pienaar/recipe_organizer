@@ -70,27 +70,30 @@
             // importToolStripMenuItem
             // 
             importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new Size(110, 22);
+            importToolStripMenuItem.Size = new Size(180, 22);
             importToolStripMenuItem.Text = "Import";
+            importToolStripMenuItem.Click += importToolStripMenuItem_Click;
             // 
             // exportToolStripMenuItem
             // 
             exportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { singleRecipeToolStripMenuItem, allRecipesToolStripMenuItem });
             exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new Size(110, 22);
+            exportToolStripMenuItem.Size = new Size(180, 22);
             exportToolStripMenuItem.Text = "Export";
             // 
             // singleRecipeToolStripMenuItem
             // 
             singleRecipeToolStripMenuItem.Name = "singleRecipeToolStripMenuItem";
-            singleRecipeToolStripMenuItem.Size = new Size(144, 22);
+            singleRecipeToolStripMenuItem.Size = new Size(180, 22);
             singleRecipeToolStripMenuItem.Text = "Single Recipe";
+            singleRecipeToolStripMenuItem.Click += singleRecipeToolStripMenuItem_Click;
             // 
             // allRecipesToolStripMenuItem
             // 
             allRecipesToolStripMenuItem.Name = "allRecipesToolStripMenuItem";
-            allRecipesToolStripMenuItem.Size = new Size(144, 22);
+            allRecipesToolStripMenuItem.Size = new Size(180, 22);
             allRecipesToolStripMenuItem.Text = "All Recipes";
+            allRecipesToolStripMenuItem.Click += allRecipesToolStripMenuItem_Click;
             // 
             // searchToolStripMenuItem
             // 

@@ -1,3 +1,8 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
+
 namespace recipe_organizer
 {
     public partial class MainWindow : Form
@@ -124,6 +129,39 @@ namespace recipe_organizer
             {
                 MessageBox.Show("Planning the recipe: " + recipeName);
             }
+        }
+
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void singleRecipeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void allRecipesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string json = JsonConvert.SerializeObject(Book, Formatting.Indented);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Export\\ExportedRecipes-" + getFileIDString() + ".json";
+            //if (!File.Exists(path))
+            //{
+            //    File.Create(path);
+            //    File.
+            //}
+            File.WriteAllText(path, json);
+        }
+
+        private string getFileIDString()
+        {
+            DateTime dateTimeNow = System.DateTime.Now;
+            string fileDate = dateTimeNow.ToShortDateString();
+            string fileTime = dateTimeNow.ToShortTimeString();
+            fileDate = fileDate.Replace("/", "-");
+            fileTime = fileTime.Replace(":", "");
+
+            return fileDate + "-" + fileTime;
         }
     }
 }

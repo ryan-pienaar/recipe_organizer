@@ -1,17 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\",
+  "WorkspaceRootPath": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -21,7 +29,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 182,
+          "DockedWidth": 277,
           "SelectedChildIndex": -1,
           "Children": [
             {
@@ -31,46 +39,72 @@
           ]
         },
         {
-          "DockedWidth": 218,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 123,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\MainWindow.cs",
-              "RelativeDocumentMoniker": "recipe_organizer\\MainWindow.cs",
-              "ToolTip": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\MainWindow.cs [Design]",
-              "RelativeToolTip": "recipe_organizer\\MainWindow.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T12:30:56.751Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Book.cs",
-              "DocumentMoniker": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\Book.cs",
-              "RelativeDocumentMoniker": "recipe_organizer\\Book.cs",
-              "ToolTip": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\Book.cs",
-              "RelativeToolTip": "recipe_organizer\\Book.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAD4vxwAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T11:24:26.677Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.cs",
-              "DocumentMoniker": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\MainWindow.cs",
+              "DocumentMoniker": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\MainWindow.cs",
               "RelativeDocumentMoniker": "recipe_organizer\\MainWindow.cs",
-              "ToolTip": "C:\\Users\\k00290626\\source\\repos\\recipe_organizer\\recipe_organizer\\MainWindow.cs",
+              "ToolTip": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\MainWindow.cs",
               "RelativeToolTip": "recipe_organizer\\MainWindow.cs",
-              "ViewState": "AQIAAFcAAAAAAAAAAADwv2kAAAAMAAAA",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAUwJgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T11:21:03.94Z",
+              "WhenOpened": "2025-03-29T11:23:50.939Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\Book.cs",
+              "RelativeDocumentMoniker": "recipe_organizer\\Book.cs",
+              "ToolTip": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\Book.cs",
+              "RelativeToolTip": "recipe_organizer\\Book.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T11:28:39.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\Program.cs",
+              "RelativeDocumentMoniker": "recipe_organizer\\Program.cs",
+              "ToolTip": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\Program.cs",
+              "RelativeToolTip": "recipe_organizer\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T11:23:09.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Recipe.cs",
+              "DocumentMoniker": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\Recipe.cs",
+              "RelativeDocumentMoniker": "recipe_organizer\\Recipe.cs",
+              "ToolTip": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\Recipe.cs",
+              "RelativeToolTip": "recipe_organizer\\Recipe.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA8wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T11:21:08.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\MainWindow.cs",
+              "RelativeDocumentMoniker": "recipe_organizer\\MainWindow.cs",
+              "ToolTip": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe_organizer\\MainWindow.cs [Design]",
+              "RelativeToolTip": "recipe_organizer\\MainWindow.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T12:30:56.751Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
