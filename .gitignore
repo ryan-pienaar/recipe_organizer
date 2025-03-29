@@ -3,3 +3,15 @@
 ################################################################################
 
 .vs/
+/recipe_organizer/obj/Debug/net8.0-windows/recipe_organizer.AssemblyInfo.cs
+/recipe_organizer/obj/Debug/net8.0-windows/recipe_organizer.AssemblyInfoInputs.cache
+/recipe_organizer/obj/Debug/net8.0-windows/recipe_organizer.assets.cache
+/recipe_organizer/obj/Debug/net8.0-windows/recipe_organizer.GeneratedMSBuildEditorConfig.editorconfig
+/recipe_organizer/obj/project.assets.json
+/recipe_organizer/obj/project.nuget.cache
+/recipe_organizer/obj/recipe_organizer.csproj.nuget.dgspec.json
+/.vs/recipe_organizer/CopilotIndices/17.12.53.23981/CodeChunks.db-shm
+/.vs/recipe_organizer/CopilotIndices/17.12.53.23981/CodeChunks.db-wal
+/.vs/recipe_organizer/CopilotIndices/17.12.53.23981/SemanticSymbols.db
+/.vs/recipe_organizer/CopilotIndices/17.12.53.23981/SemanticSymbols.db-shm
+/.vs/recipe_organizer/CopilotIndices/17.12.53.23981/SemanticSymbols.db-wal
