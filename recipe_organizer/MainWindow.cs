@@ -129,7 +129,7 @@ namespace recipe_organizer
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 selectedFilePath = openFileDialog.FileName;
-                MessageBox.Show("Selected file: " + selectedFilePath);
+                //MessageBox.Show("Selected file: " + selectedFilePath);
             }
             Book.ImportRecipes(selectedFilePath);
             var recipeViewList = Book.Recipes.OrderBy(n => n.Name).Select(n => new
@@ -167,6 +167,56 @@ namespace recipe_organizer
             fileTime = fileTime.Replace(":", "");
 
             return fileDate + "-" + fileTime;
+        }
+
+        private void btnGenShoppingList_Click(object sender, EventArgs e)
+        {
+            rtbShopList.Text = "";
+            string selectedRecipe = "";
+            try
+            {
+                selectedRecipe = dataGridViewRecipes.SelectedRows[0].Cells[0].Value.ToString();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Please select a recipe to generate a shopping list.");
+                return;
+            }
+
+            Recipe recipe = Book.Recipes.Find(r => r.Name == selectedRecipe);
+
+            foreach (KeyValuePair<string, string[]> ingredient in recipe.Ingredients)
+            {
+                rtbShopList.Text += ingredient.Key + " - " + ingredient.Value[0] + " " + ingredient.Value[1] + "\n";
+            }
+        }
+
+        private void btnSaveShopList_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt";
+            saveFileDialog.Title = "Select a Text file to save to";
+            string selectedFilePath = "";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                selectedFilePath = saveFileDialog.FileName;
+                //MessageBox.Show("Selected file: " + selectedFilePath);
+            }
+
+            if (selectedFilePath == "")
+            {
+                return;
+            }
+
+            if (rtbShopList.Text != "")
+            {
+                File.WriteAllText(selectedFilePath, rtbShopList.Text);
+            }
+            else
+            {
+                MessageBox.Show("No shopping list to save.");
+            }
+                
         }
     }
 }

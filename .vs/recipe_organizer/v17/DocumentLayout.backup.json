@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|c:\\users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17DA1917-D6D2-46C4-BD44-F9C2E51DBF7D}|recipe_organizer\\recipe_organizer.csproj|solutionrelative:recipe_organizer\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,21 +29,21 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Recipe.cs",
               "DocumentMoniker": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\Recipe.cs",
               "RelativeDocumentMoniker": "recipe_organizer\\Recipe.cs",
               "ToolTip": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\Recipe.cs",
               "RelativeToolTip": "recipe_organizer\\Recipe.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAwDMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwDMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-29T15:31:54.912Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
@@ -53,7 +53,7 @@
               "RelativeDocumentMoniker": "recipe_organizer\\MainWindow.cs",
               "ToolTip": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\MainWindow.cs",
               "RelativeToolTip": "recipe_organizer\\MainWindow.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAYwDwAAABeAAAAAAAAAA==",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAiwL0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-29T15:16:35.395Z",
               "EditorCaption": ""
@@ -73,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "MainWindow.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ryanp\\source\\repos\\recipe_organizer\\recipe_organizer\\MainWindow.cs",
               "RelativeDocumentMoniker": "recipe_organizer\\MainWindow.cs",
