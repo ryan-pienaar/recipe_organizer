@@ -148,13 +148,27 @@ namespace recipe_organizer
 
         private void singleRecipeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string selectedRecipe = "";
+            try
+            {
+                selectedRecipe = dataGridViewRecipes.SelectedRows[0].Cells[0].Value.ToString();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Please select a recipe to export.");
+                return;
+            }
 
+            Recipe recipe = Book.Recipes.Find(r => r.Name == selectedRecipe);
+            string json = JsonConvert.SerializeObject(recipe, Formatting.Indented);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Export\\ExportedRecipe-" + selectedRecipe + "-" + getFileIDString() + ".json";
+            File.WriteAllText(path, json);
         }
 
         private void allRecipesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string json = JsonConvert.SerializeObject(Book.Recipes, Formatting.Indented);
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Export\\ExportedRecipes-" + getFileIDString() + ".json";
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Export\\ExportedAllRecipes-" + getFileIDString() + ".json";
             File.WriteAllText(path, json);
         }
 

@@ -22,12 +22,19 @@ namespace recipe_organizer
 
         public void ImportRecipes(string JSONFilePath)
         {
-            List<Recipe> ImportedRecipes = new List<Recipe>();
             string JSONString = System.IO.File.ReadAllText(JSONFilePath);
-            ImportedRecipes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Recipe>>(JSONString);
-            foreach (Recipe recipe in ImportedRecipes)
+            if (JSONString.TrimStart().StartsWith("["))
             {
-                Recipes.Add(recipe);
+                List<Recipe> ImportedRecipes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Recipe>>(JSONString);
+                foreach (Recipe recipe in ImportedRecipes)
+                {
+                    Recipes.Add(recipe);
+                }
+            }
+            else
+            {
+                Recipe singleRecipe = Newtonsoft.Json.JsonConvert.DeserializeObject<Recipe>(JSONString);
+                Recipes.Add(singleRecipe);
             }
         }
 
