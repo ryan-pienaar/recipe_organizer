@@ -17,10 +17,10 @@ namespace recipe_organizer
         public List<string> Categories { get; set; }
         public int Servings { get; set; }
         public int Calories { get; set; }
-        public List<string> Ingredients { get; set; }
+        public Dictionary<string, string[]> Ingredients { get; set; }
         public List<string> Instructions { get; set; }
 
-        public Recipe(string name, string description, string photoFilePath, double prepTime, double cookTime, List<string> categories, int servings, int calories, List<string> ingredients, List<string> instructions)
+        public Recipe(string name, string description, string photoFilePath, double prepTime, double cookTime, List<string> categories, int servings, int calories, Dictionary<string, string[]> ingredients, List<string> instructions)
         {
             Name = name;
             Description = description;
@@ -44,7 +44,7 @@ namespace recipe_organizer
             Categories = new List<string>();
             Servings = 0;
             Calories = 0;
-            Ingredients = new List<string>();
+            Ingredients = new Dictionary<string, string[]>();
             Instructions = new List<string>();
         }
     }
