@@ -213,6 +213,7 @@ namespace recipe_organizer
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text files (*.txt)|*.txt";
             saveFileDialog.Title = "Select a Text file to save to";
+            saveFileDialog.FileName = "ShoppingList-" + getFileIDString() + ".txt";
             string selectedFilePath = "";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -233,7 +234,7 @@ namespace recipe_organizer
             {
                 MessageBox.Show("No shopping list to save.");
             }
-                
+
         }
 
         private void refreshDataGrid()
@@ -245,6 +246,68 @@ namespace recipe_organizer
                 n.TotalTime
             }).ToList();
             dataGridViewRecipes.DataSource = recipeViewList;
+        }
+
+        private void btnShareRecipe_Click(object sender, EventArgs e)
+        {
+            string selectedRecipe = "";
+            try
+            {
+                selectedRecipe = dataGridViewRecipes.SelectedRows[0].Cells[0].Value.ToString();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Please select a recipe to share.");
+                return;
+            }
+
+            Recipe recipe = Book.Recipes.Find(r => r.Name == selectedRecipe);
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt";
+            saveFileDialog.Title = "Select a Text file to save to";
+            saveFileDialog.FileName = recipe.Name + "-Recipe.txt";
+            string selectedFilePath = "";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                selectedFilePath = saveFileDialog.FileName;
+                //MessageBox.Show("Selected file: " + selectedFilePath);
+            }
+
+            if (selectedFilePath == "")
+            {
+                return;
+            }
+
+            
+            string recipeShareString = " ----- " + recipe.Name + " ----- \n\n" +
+                "Description: " + recipe.Description + "\n\n" +
+                "Prep Time: " + (recipe.PrepTime / 60) + " minutes\n" +
+                "Cook Time: " + (recipe.CookTime / 60) + " minutes\n" +
+                "Total Time: " + (recipe.TotalTime / 60) + " minutes\n\n" +
+                "Categories: ";
+            foreach (string category in recipe.Categories)
+            {
+                recipeShareString += category + ", ";
+            }
+            recipeShareString = recipeShareString.TrimEnd(',', ' ');
+            recipeShareString += "\n\n" +
+                "Servings: " + recipe.Servings + "\n" +
+                "Calories: " + recipe.Calories + "\n\n" +
+                "Ingredients: \n";
+            foreach (KeyValuePair<string, string[]> ingredient in recipe.Ingredients)
+            {
+                recipeShareString += ingredient.Key + " - " + ingredient.Value[0] + " " + ingredient.Value[1] + "\n";
+            }
+            recipeShareString += "\nInstructions: \n";
+            int count = 1;
+            foreach (string instruction in recipe.Instructions)
+            {
+                recipeShareString += count + ". " + instruction + "\n";
+                count++;
+            }
+
+            File.WriteAllText(selectedFilePath, recipeShareString);
         }
     }
 }

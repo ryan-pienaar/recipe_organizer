@@ -47,6 +47,7 @@
             lblSelectCategory = new Label();
             lblSelectRecipe = new Label();
             dataGridViewRecipes = new DataGridView();
+            btnShareRecipe = new Button();
             menuStrip.SuspendLayout();
             groupBoxShopList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewRecipes).BeginInit();
@@ -143,7 +144,7 @@
             groupBoxShopList.Controls.Add(rtbShopList);
             groupBoxShopList.Location = new Point(174, 333);
             groupBoxShopList.Name = "groupBoxShopList";
-            groupBoxShopList.Size = new Size(741, 169);
+            groupBoxShopList.Size = new Size(301, 169);
             groupBoxShopList.TabIndex = 5;
             groupBoxShopList.TabStop = false;
             groupBoxShopList.Text = "Shopping List";
@@ -205,11 +206,22 @@
             dataGridViewRecipes.TabIndex = 8;
             dataGridViewRecipes.CellClick += dataGridViewRecipes_CellClick;
             // 
+            // btnShareRecipe
+            // 
+            btnShareRecipe.Location = new Point(785, 444);
+            btnShareRecipe.Name = "btnShareRecipe";
+            btnShareRecipe.Size = new Size(130, 52);
+            btnShareRecipe.TabIndex = 9;
+            btnShareRecipe.Text = "Share Recipe";
+            btnShareRecipe.UseVisualStyleBackColor = true;
+            btnShareRecipe.Click += btnShareRecipe_Click;
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(927, 543);
+            ClientSize = new Size(927, 512);
+            Controls.Add(btnShareRecipe);
             Controls.Add(dataGridViewRecipes);
             Controls.Add(lblSelectRecipe);
             Controls.Add(lblSelectCategory);
@@ -248,5 +260,6 @@
         private Label lblSelectRecipe;
         private DataGridView dataGridViewRecipes;
         private Button btnGenShoppingList;
+        private Button btnShareRecipe;
     }
 }
