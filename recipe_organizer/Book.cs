@@ -28,12 +28,23 @@ namespace recipe_organizer
                 List<Recipe> ImportedRecipes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Recipe>>(JSONString);
                 foreach (Recipe recipe in ImportedRecipes)
                 {
-                    Recipes.Add(recipe);
+                    if (isAlreadyInBook(recipe, false))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Recipes.Add(recipe);
+                    }
                 }
             }
             else
             {
                 Recipe singleRecipe = Newtonsoft.Json.JsonConvert.DeserializeObject<Recipe>(JSONString);
+                if (isAlreadyInBook(singleRecipe, true))
+                {
+                    return;
+                }
                 Recipes.Add(singleRecipe);
             }
         }
@@ -41,6 +52,24 @@ namespace recipe_organizer
         public void Add(Recipe recipe)
         {
             Recipes.Add(recipe);
+        }
+
+        public void Delete(Recipe recipe)
+        {
+            Recipes.Remove(recipe);
+        }
+
+        public bool isAlreadyInBook(Recipe recipe, bool isSingleRecipe)
+        {
+            if (Recipes.Contains(recipe))
+            {
+                if (isSingleRecipe)
+                {
+                    MessageBox.Show("This recipe is already in the book.");
+                }
+                return true;
+            }
+            return false;
         }
 
 

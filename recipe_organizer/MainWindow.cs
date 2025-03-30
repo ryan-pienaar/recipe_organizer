@@ -109,7 +109,10 @@ namespace recipe_organizer
 
             if (e.ColumnIndex == deleteIndex)
             {
-                MessageBox.Show("Deleting the recipe: " + recipeName);
+                Recipe? recipe = Book.Recipes.Find(r => r.Name == recipeName);
+                Book.Delete(recipe);
+                refreshDataGrid();
+                //MessageBox.Show("Deleting the recipe: " + recipeName);
             }
 
             if (e.ColumnIndex == plannerIndex)
@@ -231,6 +234,17 @@ namespace recipe_organizer
                 MessageBox.Show("No shopping list to save.");
             }
                 
+        }
+
+        private void refreshDataGrid()
+        {
+            var recipeViewList = Book.Recipes.OrderBy(n => n.Name).Select(n => new
+            {
+                n.Name,
+                n.Description,
+                n.TotalTime
+            }).ToList();
+            dataGridViewRecipes.DataSource = recipeViewList;
         }
     }
 }
