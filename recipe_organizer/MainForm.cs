@@ -5,12 +5,12 @@ using Newtonsoft.Json;
 
 namespace recipe_organizer
 {
-    public partial class MainWindow : Form
+    public partial class MainForm : Form
     {
 
         Book Book = new Book();
 
-        public MainWindow(string JSONData)
+        public MainForm(string JSONData)
         {
             InitializeComponent();
             SetUpData(JSONData);

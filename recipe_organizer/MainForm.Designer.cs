@@ -1,6 +1,6 @@
 ﻿namespace recipe_organizer
 {
-    partial class MainWindow
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
