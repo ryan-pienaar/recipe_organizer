@@ -52,6 +52,9 @@ namespace recipe_organizer
         public void Add(Recipe recipe)
         {
             Recipes.Add(recipe);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Data\\data.json";
+            string json = JsonConvert.SerializeObject(Recipes, Formatting.Indented);
+            File.WriteAllText(path, json);
         }
 
         public void Delete(Recipe recipe)

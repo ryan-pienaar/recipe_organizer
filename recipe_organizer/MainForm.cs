@@ -209,7 +209,7 @@ namespace recipe_organizer
             }
             catch (ArgumentOutOfRangeException)
             {
-                MessageBox.Show("Please select a recipe to generate a shopping list.");
+                MessageBox.Show("Please select a recipe in order to generate a shopping list.");
                 return;
             }
 
