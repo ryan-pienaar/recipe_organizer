@@ -55,29 +55,42 @@ namespace recipe_organizer
 
         private void SetUpData(string JSONData)
         {
-            //List<string> categories_ex_1 = new List<string>();
-            //categories_ex_1.Add("Pasta");
-            //categories_ex_1.Add("Italian");
-            //Dictionary<string, string[]> ingredients_ex_1 = new Dictionary<string, string[]>();
-            //ingredients_ex_1.Add("Pancetta", ["170", "g"]);
-            //ingredients_ex_1.Add("Spaghetti", ["225", "g"]);
-            //ingredients_ex_1.Add("Whipping Cream", ["484", "ml"]);
-            //ingredients_ex_1.Add("Egg Yolk", ["2", ""]);
-            //ingredients_ex_1.Add("Parmesan Cheese", ["150", "g"]);
-            //ingredients_ex_1.Add("Black Pepper", ["1", "tsp"]);
-            //ingredients_ex_1.Add("Basil", ["4", "tbs"]);
-            //List<string> instructions_ex_1 = new List<string>();
-            //instructions_ex_1.Add("Bring a large pot of salted water to boil over high heat. Add the pasta and cook according to package instructions. Drain and set aside.");
-            //instructions_ex_1.Add("Add the pancetta to a large skillet and saute over medium-low heat until crisp, about 8 minutes. Transfer the pancetta to a bowl using a slotted spoon.");
-            //instructions_ex_1.Add("Add the half and half to the skillet and bring to a simmer. Whisk the egg yolks into the sauce. Whisk in the Parmesan cheese. Stir in the black pepper. Taste for salt and season if needed. I find no salt is needed since the cheese adds plenty of saltiness.");
-            //instructions_ex_1.Add("Add the cooked spaghetti, bacon and basil to the skillet and toss well to combine.");
-            //instructions_ex_1.Add("Serve immediately with additional Parmesan cheese and black pepper.");
-            //Recipe recipe_ex_1 = new Recipe("Carbonara", "Pasta Carbonara made with cream", "C:/test.png", 600, 300, categories_ex_1, 4, 1100, ingredients_ex_1, instructions_ex_1);
-
-            //Book.Add(recipe_ex_1);
-
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Data\\data.json";
-            Book.ImportRecipes(path);
+            if (File.Exists(path))
+            {
+                string json = File.ReadAllText(path);
+                if (json == "")
+                {
+                    List<string> categories_ex_1 = new List<string>();
+                    categories_ex_1.Add("Pasta");
+                    categories_ex_1.Add("Italian");
+                    Dictionary<string, string[]> ingredients_ex_1 = new Dictionary<string, string[]>();
+                    ingredients_ex_1.Add("Pancetta", ["170", "g"]);
+                    ingredients_ex_1.Add("Spaghetti", ["225", "g"]);
+                    ingredients_ex_1.Add("Whipping Cream", ["484", "ml"]);
+                    ingredients_ex_1.Add("Egg Yolk", ["2", ""]);
+                    ingredients_ex_1.Add("Parmesan Cheese", ["150", "g"]);
+                    ingredients_ex_1.Add("Black Pepper", ["1", "tsp"]);
+                    ingredients_ex_1.Add("Basil", ["4", "tbs"]);
+                    List<string> instructions_ex_1 = new List<string>();
+                    instructions_ex_1.Add("Bring a large pot of salted water to boil over high heat. Add the pasta and cook according to package instructions. Drain and set aside.");
+                    instructions_ex_1.Add("Add the pancetta to a large skillet and saute over medium-low heat until crisp, about 8 minutes. Transfer the pancetta to a bowl using a slotted spoon.");
+                    instructions_ex_1.Add("Add the half and half to the skillet and bring to a simmer. Whisk the egg yolks into the sauce. Whisk in the Parmesan cheese. Stir in the black pepper. Taste for salt and season if needed. I find no salt is needed since the cheese adds plenty of saltiness.");
+                    instructions_ex_1.Add("Add the cooked spaghetti, bacon and basil to the skillet and toss well to combine.");
+                    instructions_ex_1.Add("Serve immediately with additional Parmesan cheese and black pepper.");
+                    Recipe recipe_ex_1 = new Recipe("Carbonara", "Pasta Carbonara made with cream", "C:/test.png", 600, 300, categories_ex_1, 4, 1100, ingredients_ex_1, instructions_ex_1);
+
+                    Book.Add(recipe_ex_1);
+                }
+                else
+                {
+                    Book.ImportRecipes(path);
+                }
+            }
+            else
+            {
+                MessageBox.Show("DATA_ERR: Uh oh. Something went wrong :(");
+            }
         }
 
         //Save recipe data on window closure
