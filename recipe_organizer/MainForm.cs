@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml.Serialization;
 using Newtonsoft.Json;
 
 namespace recipe_organizer
@@ -51,6 +52,8 @@ namespace recipe_organizer
             dataGridViewRecipes.Columns.Add(editButtonCol);
             dataGridViewRecipes.Columns.Add(deleteButtonCol);
             dataGridViewRecipes.Columns.Add(addToPlannerButtonCol);
+
+            displayCategories();
         }
 
         private void SetUpData(string JSONData)
@@ -91,6 +94,31 @@ namespace recipe_organizer
             {
                 MessageBox.Show("DATA_ERR: Uh oh. Something went wrong :(");
             }
+        }
+
+        private void displayCategories()
+        {
+            List<string> categories = new List<string>();
+
+            foreach (Recipe recipe in Book.Recipes)
+            {
+                foreach (string category in recipe.Categories)
+                {
+                    categories.Add(category);
+                }
+            }
+
+
+            categories.Sort();
+
+            foreach (string category in categories)
+            {
+                ListViewItem item = new ListViewItem(category);
+                item.SubItems.Add(category);
+                listViewRecipeCategory.Items.Add(item);
+            }
+
+            
         }
 
         //Save recipe data on window closure

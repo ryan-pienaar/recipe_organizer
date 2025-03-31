@@ -40,6 +40,7 @@
             createNewToolStripMenuItem = new ToolStripMenuItem();
             plannerToolStripMenuItem = new ToolStripMenuItem();
             listViewRecipeCategory = new ListView();
+            colCategory = new ColumnHeader();
             groupBoxShopList = new GroupBox();
             btnGenShoppingList = new Button();
             btnSaveShopList = new Button();
@@ -131,11 +132,22 @@
             // 
             // listViewRecipeCategory
             // 
+            listViewRecipeCategory.CheckBoxes = true;
+            listViewRecipeCategory.Columns.AddRange(new ColumnHeader[] { colCategory });
+            listViewRecipeCategory.FullRowSelect = true;
+            listViewRecipeCategory.GridLines = true;
             listViewRecipeCategory.Location = new Point(12, 56);
             listViewRecipeCategory.Name = "listViewRecipeCategory";
+            listViewRecipeCategory.Scrollable = false;
             listViewRecipeCategory.Size = new Size(144, 446);
             listViewRecipeCategory.TabIndex = 2;
             listViewRecipeCategory.UseCompatibleStateImageBehavior = false;
+            listViewRecipeCategory.View = View.Details;
+            // 
+            // colCategory
+            // 
+            colCategory.Text = "All Categories";
+            colCategory.Width = 141;
             // 
             // groupBoxShopList
             // 
@@ -216,7 +228,7 @@
             btnShareRecipe.UseVisualStyleBackColor = true;
             btnShareRecipe.Click += btnShareRecipe_Click;
             // 
-            // MainWindow
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -229,7 +241,7 @@
             Controls.Add(listViewRecipeCategory);
             Controls.Add(menuStrip);
             MainMenuStrip = menuStrip;
-            Name = "MainWindow";
+            Name = "MainForm";
             Text = "Recipe Organizer";
             Load += MainWindow_Load;
             menuStrip.ResumeLayout(false);
@@ -261,5 +273,6 @@
         private DataGridView dataGridViewRecipes;
         private Button btnGenShoppingList;
         private Button btnShareRecipe;
+        private ColumnHeader colCategory;
     }
 }
