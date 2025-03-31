@@ -74,3 +74,5 @@
 /.vs/recipe_organizer/DesignTimeBuild/.dtbcache.v2
 /.vs/recipe_organizer/v17/.wsuo
 /recipe_organizer/obj/Debug/net8.0-windows/recipe_organizer.MainForm.resources
+/recipe_organizer/obj/recipe_organizer.csproj.nuget.g.props
+/recipe_organizer/obj/recipe_organizer.csproj.nuget.g.props
