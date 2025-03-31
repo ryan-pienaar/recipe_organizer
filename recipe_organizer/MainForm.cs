@@ -20,7 +20,7 @@ namespace recipe_organizer
         private void MainWindow_Load(object sender, EventArgs e)
         {
 
-            groupBoxShopList.Visible = false;
+            //groupBoxShopList.Visible = false;
 
             DataGridViewButtonColumn viewButtonCol = new DataGridViewButtonColumn();
             DataGridViewButtonColumn editButtonCol = new DataGridViewButtonColumn();
@@ -359,33 +359,33 @@ namespace recipe_organizer
 
         }
 
-        private void listViewRecipeCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listViewRecipeCategory.SelectedIndices.Count == 0)
-            {
+        //private void listViewRecipeCategory_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (listViewRecipeCategory.SelectedIndices.Count == 0)
+        //    {
 
-                MessageBox.Show
-                (
-                                "Error: Please select a category",
-                                "Error  ",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Exclamation,
-                                MessageBoxDefaultButton.Button1
-                );
+        //        MessageBox.Show
+        //        (
+        //                        "Error: Please select a category",
+        //                        "Error  ",
+        //                        MessageBoxButtons.OK,
+        //                        MessageBoxIcon.Exclamation,
+        //                        MessageBoxDefaultButton.Button1
+        //        );
 
-            }
-            else
-            {
-                string categoryChose = listViewRecipeCategory.SelectedItems[0].Text;
-                if (!string.IsNullOrEmpty(categoryChose))
-                {
-                    groupBoxShopList.Visible = true;
-                }
-                else
-                {
-                    groupBoxShopList.Visible = false;
-                }
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //        string categoryChose = listViewRecipeCategory.SelectedItems[0].Text;
+        //        if (!string.IsNullOrEmpty(categoryChose))
+        //        {
+        //            groupBoxShopList.Visible = true;
+        //        }
+        //        else
+        //        {
+        //            groupBoxShopList.Visible = false;
+        //        }
+        //    }
+        //}
     }
 }
