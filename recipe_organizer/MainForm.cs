@@ -18,6 +18,9 @@ namespace recipe_organizer
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+
+            groupBoxShopList.Visible = false;
+
             DataGridViewButtonColumn viewButtonCol = new DataGridViewButtonColumn();
             DataGridViewButtonColumn editButtonCol = new DataGridViewButtonColumn();
             DataGridViewButtonColumn deleteButtonCol = new DataGridViewButtonColumn();
@@ -292,7 +295,7 @@ namespace recipe_organizer
                 return;
             }
 
-            
+
             string recipeShareString = " ----- " + recipe.Name + " ----- \n\n" +
                 "Description: " + recipe.Description + "\n\n" +
                 "Prep Time: " + (recipe.PrepTime / 60) + " minutes\n" +
@@ -321,6 +324,40 @@ namespace recipe_organizer
             }
 
             File.WriteAllText(selectedFilePath, recipeShareString);
+        }
+
+        private void dataGridViewRecipes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void listViewRecipeCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewRecipeCategory.SelectedIndices.Count == 0)
+            {
+
+                MessageBox.Show
+                (
+                                "Error: Please select a category",
+                                "Error  ",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation,
+                                MessageBoxDefaultButton.Button1
+                );
+
+            }
+            else
+            {
+                string categoryChose = listViewRecipeCategory.SelectedItems[0].Text;
+                if (!string.IsNullOrEmpty(categoryChose))
+                {
+                    groupBoxShopList.Visible = true;
+                }
+                else
+                {
+                    groupBoxShopList.Visible = false;
+                }
+            }
         }
     }
 }
