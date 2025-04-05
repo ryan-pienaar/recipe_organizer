@@ -366,6 +366,25 @@ namespace recipe_organizer
             search.Show();
         }
 
+        private void createNewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateRecipe createRecipe = new CreateRecipe(this, this.Book);
+            createRecipe.Show();
+        }
+
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        public void RefreshDataGrid()
+        {
+            dataGridViewRecipes.DataSource = null;  // Clear current binding
+            dataGridViewRecipes.DataSource = Book.Recipes.ToList();  // Rebind with updated recipes
+            dataGridViewRecipes.Refresh();  // Force update
+        }
+
+
         //private void listViewRecipeCategory_SelectedIndexChanged(object sender, EventArgs e)
         //{
         //    if (listViewRecipeCategory.SelectedIndices.Count == 0)

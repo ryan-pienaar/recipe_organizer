@@ -65,6 +65,7 @@
             menuStrip.Size = new Size(1059, 30);
             menuStrip.TabIndex = 1;
             menuStrip.Text = "menuStrip";
+            menuStrip.ItemClicked += menuStrip_ItemClicked;
             // 
             // fileToolStripMenuItem
             // 
@@ -111,7 +112,7 @@
             // byCategoryToolStripMenuItem
             // 
             byCategoryToolStripMenuItem.Name = "byCategoryToolStripMenuItem";
-            byCategoryToolStripMenuItem.Size = new Size(224, 26);
+            byCategoryToolStripMenuItem.Size = new Size(172, 26);
             byCategoryToolStripMenuItem.Text = "By Category";
             byCategoryToolStripMenuItem.Click += byCategoryToolStripMenuItem_Click;
             // 
@@ -127,6 +128,7 @@
             createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
             createNewToolStripMenuItem.Size = new Size(169, 26);
             createNewToolStripMenuItem.Text = "Create New";
+            createNewToolStripMenuItem.Click += createNewToolStripMenuItem_Click;
             // 
             // plannerToolStripMenuItem
             // 
