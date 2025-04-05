@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace recipe_organizer
 {
-    internal class Book
+    public class Book
     {
         public List<Recipe> Recipes { get; set; }
 

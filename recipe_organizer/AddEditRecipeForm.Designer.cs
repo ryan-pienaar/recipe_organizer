@@ -190,6 +190,7 @@
             // nudAddEditCookTime
             // 
             nudAddEditCookTime.Location = new Point(186, 66);
+            nudAddEditCookTime.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
             nudAddEditCookTime.Name = "nudAddEditCookTime";
             nudAddEditCookTime.Size = new Size(103, 23);
             nudAddEditCookTime.TabIndex = 6;
@@ -197,6 +198,7 @@
             // nudAddEditPrepTime
             // 
             nudAddEditPrepTime.Location = new Point(186, 26);
+            nudAddEditPrepTime.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
             nudAddEditPrepTime.Name = "nudAddEditPrepTime";
             nudAddEditPrepTime.Size = new Size(103, 23);
             nudAddEditPrepTime.TabIndex = 5;
@@ -226,6 +228,7 @@
             // nudAddEditCalories
             // 
             nudAddEditCalories.Location = new Point(110, 67);
+            nudAddEditCalories.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
             nudAddEditCalories.Name = "nudAddEditCalories";
             nudAddEditCalories.Size = new Size(103, 23);
             nudAddEditCalories.TabIndex = 7;
@@ -249,6 +252,7 @@
             // lbxAddEditInstructions
             // 
             lbxAddEditInstructions.FormattingEnabled = true;
+            lbxAddEditInstructions.HorizontalScrollbar = true;
             lbxAddEditInstructions.ItemHeight = 15;
             lbxAddEditInstructions.Location = new Point(622, 256);
             lbxAddEditInstructions.Name = "lbxAddEditInstructions";
@@ -257,23 +261,23 @@
             // 
             // btnAddEditSave
             // 
-            btnAddEditSave.Location = new Point(421, 390);
+            btnAddEditSave.Location = new Point(411, 388);
             btnAddEditSave.Name = "btnAddEditSave";
             btnAddEditSave.Size = new Size(129, 46);
             btnAddEditSave.TabIndex = 19;
             btnAddEditSave.Text = "Save";
             btnAddEditSave.UseVisualStyleBackColor = true;
-            btnAddEditSave.Click += this.btnAddEditSave_Click;
+            btnAddEditSave.Click += btnAddEditSave_Click;
             // 
             // btnAddEditCancel
             // 
-            btnAddEditCancel.Location = new Point(421, 451);
+            btnAddEditCancel.Location = new Point(411, 449);
             btnAddEditCancel.Name = "btnAddEditCancel";
             btnAddEditCancel.Size = new Size(129, 46);
             btnAddEditCancel.TabIndex = 20;
             btnAddEditCancel.Text = "Cancel";
             btnAddEditCancel.UseVisualStyleBackColor = true;
-            btnAddEditCancel.Click += this.btnAddEditCancel_Click;
+            btnAddEditCancel.Click += btnAddEditCancel_Click;
             // 
             // btnAddEditCatAdd
             // 
@@ -283,7 +287,7 @@
             btnAddEditCatAdd.TabIndex = 21;
             btnAddEditCatAdd.Text = "Add";
             btnAddEditCatAdd.UseVisualStyleBackColor = true;
-            btnAddEditCatAdd.Click += this.btnAddEditCatAdd_Click;
+            btnAddEditCatAdd.Click += btnAddEditCatAdd_Click;
             // 
             // btnAddEditCatRemove
             // 
@@ -293,7 +297,7 @@
             btnAddEditCatRemove.TabIndex = 22;
             btnAddEditCatRemove.Text = "Remove";
             btnAddEditCatRemove.UseVisualStyleBackColor = true;
-            btnAddEditCatRemove.Click += this.btnAddEditCatRemove_Click;
+            btnAddEditCatRemove.Click += btnAddEditCatRemove_Click;
             // 
             // btnAddEditInstructAdd
             // 
@@ -303,7 +307,7 @@
             btnAddEditInstructAdd.TabIndex = 23;
             btnAddEditInstructAdd.Text = "Add";
             btnAddEditInstructAdd.UseVisualStyleBackColor = true;
-            btnAddEditInstructAdd.Click += this.btnAddEditInstructAdd_Click;
+            btnAddEditInstructAdd.Click += btnAddEditInstructAdd_Click;
             // 
             // btnAddEditInstructRemove
             // 
@@ -322,7 +326,7 @@
             btnAddEditIngAdd.TabIndex = 25;
             btnAddEditIngAdd.Text = "Add";
             btnAddEditIngAdd.UseVisualStyleBackColor = true;
-            btnAddEditIngAdd.Click += this.btnAddEditIngAdd_Click;
+            btnAddEditIngAdd.Click += btnAddEditIngAdd_Click;
             // 
             // btnAddEditIngRemove
             // 
@@ -341,7 +345,7 @@
             btnAddEditImageAdd.TabIndex = 27;
             btnAddEditImageAdd.Text = "Select";
             btnAddEditImageAdd.UseVisualStyleBackColor = true;
-            btnAddEditImageAdd.Click += this.btnAddEditImageAdd_Click;
+            btnAddEditImageAdd.Click += btnAddEditImageAdd_Click;
             // 
             // btnAddEditImageRemove
             // 
@@ -351,7 +355,7 @@
             btnAddEditImageRemove.TabIndex = 28;
             btnAddEditImageRemove.Text = "Remove";
             btnAddEditImageRemove.UseVisualStyleBackColor = true;
-            btnAddEditImageRemove.Click += this.btnAddEditImageRemove_Click;
+            btnAddEditImageRemove.Click += btnAddEditImageRemove_Click;
             // 
             // btnAddEditIngEdit
             // 
@@ -361,7 +365,7 @@
             btnAddEditIngEdit.TabIndex = 29;
             btnAddEditIngEdit.Text = "Edit";
             btnAddEditIngEdit.UseVisualStyleBackColor = true;
-            btnAddEditIngEdit.Click += this.btnAddEditIngEdit_Click;
+            btnAddEditIngEdit.Click += btnAddEditIngEdit_Click;
             // 
             // btnAddEditInstructEdit
             // 
@@ -371,7 +375,7 @@
             btnAddEditInstructEdit.TabIndex = 30;
             btnAddEditInstructEdit.Text = "Edit";
             btnAddEditInstructEdit.UseVisualStyleBackColor = true;
-            btnAddEditInstructEdit.Click += this.btnAddEditInstructEdit_Click;
+            btnAddEditInstructEdit.Click += btnAddEditInstructEdit_Click;
             // 
             // AddEditRecipeForm
             // 

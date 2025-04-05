@@ -13,18 +13,55 @@ namespace recipe_organizer
 {
     public partial class AddEditRecipeForm : Form
     {
-        private Recipe recipe;
-        private bool editMode;
+        private Recipe recipe = new Recipe();
+        private bool editMode = false;
+        private string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer";
 
-        public AddEditRecipeForm(bool editMode)
+        public AddEditRecipeForm(bool editMode, Recipe recipe)
         {
+            this.recipe = recipe;
             this.editMode = editMode;
+            InitializeComponent();
+            if (editMode)
+            {
+                this.Text = "Edit Recipe";
+                EditRecipe();
+            }
+            else
+            {
+                this.Text = "Add Recipe";
+                AddRecipe();
+            }
+        }
+
+        public AddEditRecipeForm()
+        {
             InitializeComponent();
         }
 
         private void EditRecipe()
         {
-
+            txtAddEditName.Text = recipe.Name;
+            rtbAddEditDescription.Text = recipe.Description;
+            nudAddEditPrepTime.Value = (int)recipe.PrepTime / 60;
+            nudAddEditCookTime.Value = (int)recipe.CookTime / 60;
+            nudAddEditServings.Value = recipe.Servings;
+            nudAddEditCalories.Value = recipe.Calories;
+            foreach (var ingredient in recipe.Ingredients)
+            {
+                lbxAddEditIngredients.Items.Add(ingredient.Key + ": " + string.Join(" ", ingredient.Value));
+            }
+            foreach (var category in recipe.Categories)
+            {
+                lbxAddEditCategories.Items.Add(category);
+            }
+            foreach (var instruction in recipe.Instructions)
+            {
+                lbxAddEditInstructions.Items.Add(instruction);
+            }
+            picBoxAddEditImage.Image = Image.FromFile(path + "\\Data\\Images\\temp_image.png");
+            //Make the image fit the picture box
+            picBoxAddEditImage.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void AddRecipe()
@@ -52,6 +89,66 @@ namespace recipe_organizer
                     newRecipe.Instructions.Add(item.ToString());
                 }
             }
+        }
+
+        private void btnAddEditSave_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnAddEditCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAddEditInstructAdd_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnAddEditInstructEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddEditInstructRemove_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddEditCatAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddEditCatRemove_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddEditIngAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddEditIngRemove_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddEditIngEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddEditImageAdd_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnAddEditImageRemove_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

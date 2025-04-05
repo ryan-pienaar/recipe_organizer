@@ -20,6 +20,11 @@ namespace recipe_organizer
                 Directory.CreateDirectory(path + "\\Import");
             }
 
+            if (!File.Exists(path + "\\Data\\Images\\temp_image.png"))
+            {
+                File.Copy("C:\\Users\\" + Environment.UserName + "\\source\\repos\\recipe_organizer\\recipe_organizer\\Data\\temp_image.png", path + "\\Data\\Images\\temp_image.png");
+            }
+
             string JSONData = "";
 
             if (!File.Exists(path + "\\Data\\data.json"))

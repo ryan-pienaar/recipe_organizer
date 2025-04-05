@@ -123,8 +123,9 @@
             // createNewToolStripMenuItem
             // 
             createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
-            createNewToolStripMenuItem.Size = new Size(135, 22);
+            createNewToolStripMenuItem.Size = new Size(180, 22);
             createNewToolStripMenuItem.Text = "Create New";
+            createNewToolStripMenuItem.Click += createNewToolStripMenuItem_Click;
             // 
             // plannerToolStripMenuItem
             // 
@@ -226,7 +227,6 @@
             dataGridViewRecipes.Size = new Size(741, 271);
             dataGridViewRecipes.TabIndex = 8;
             dataGridViewRecipes.CellClick += dataGridViewRecipes_CellClick;
-            dataGridViewRecipes.CellContentClick += dataGridViewRecipes_CellContentClick;
             // 
             // btnShareRecipe
             // 

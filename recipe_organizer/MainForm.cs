@@ -121,7 +121,7 @@ namespace recipe_organizer
                 listViewRecipeCategory.Items.Add(item);
             }
 
-            
+
         }
 
         //Save recipe data on window closure
@@ -148,7 +148,9 @@ namespace recipe_organizer
 
             if (e.ColumnIndex == editIndex)
             {
-                MessageBox.Show("Editing the recipe: " + recipeName);
+                Recipe? recipe = Book.Recipes.Find(r => r.Name == recipeName);
+                AddEditRecipeForm form = new AddEditRecipeForm(true, recipe);
+                form.ShowDialog();
             }
 
             if (e.ColumnIndex == deleteIndex)
@@ -353,10 +355,10 @@ namespace recipe_organizer
 
             File.WriteAllText(selectedFilePath, recipeShareString);
         }
-
-        private void dataGridViewRecipes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void createNewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         //private void listViewRecipeCategory_SelectedIndexChanged(object sender, EventArgs e)

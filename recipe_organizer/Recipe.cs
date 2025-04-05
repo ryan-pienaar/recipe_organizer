@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace recipe_organizer
 {
-    internal class Recipe
+    public class Recipe
     {
         public string Name { get; set; }
         public string Description { get; set; }
