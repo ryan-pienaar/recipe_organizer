@@ -121,7 +121,7 @@ namespace recipe_organizer
                 listViewRecipeCategory.Items.Add(item);
             }
 
-            
+
         }
 
         //Save recipe data on window closure
@@ -357,6 +357,13 @@ namespace recipe_organizer
         private void dataGridViewRecipes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void byCategoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchForm search = new SearchForm(Book);
+
+            search.Show();
         }
 
         //private void listViewRecipeCategory_SelectedIndexChanged(object sender, EventArgs e)
