@@ -384,6 +384,12 @@ namespace recipe_organizer
             dataGridViewRecipes.Refresh();  // Force update
         }
 
+        private void plannerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Planner planner = new Planner(this.Book);
+            planner.Show();
+        }
+
 
         //private void listViewRecipeCategory_SelectedIndexChanged(object sender, EventArgs e)
         //{

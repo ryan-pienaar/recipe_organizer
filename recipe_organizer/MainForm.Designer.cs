@@ -135,6 +135,7 @@
             plannerToolStripMenuItem.Name = "plannerToolStripMenuItem";
             plannerToolStripMenuItem.Size = new Size(72, 24);
             plannerToolStripMenuItem.Text = "Planner";
+            plannerToolStripMenuItem.Click += plannerToolStripMenuItem_Click;
             // 
             // listViewRecipeCategory
             // 
