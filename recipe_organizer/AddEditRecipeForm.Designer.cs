@@ -336,6 +336,7 @@
             btnAddEditIngRemove.TabIndex = 26;
             btnAddEditIngRemove.Text = "Remove";
             btnAddEditIngRemove.UseVisualStyleBackColor = true;
+            btnAddEditIngRemove.Click += btnAddEditIngRemove_Click;
             // 
             // btnAddEditImageAdd
             // 

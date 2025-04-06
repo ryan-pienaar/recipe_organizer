@@ -20,41 +20,7 @@ namespace recipe_organizer
         private void MainWindow_Load(object sender, EventArgs e)
         {
 
-            //groupBoxShopList.Visible = false;
-
-            DataGridViewButtonColumn viewButtonCol = new DataGridViewButtonColumn();
-            DataGridViewButtonColumn editButtonCol = new DataGridViewButtonColumn();
-            DataGridViewButtonColumn deleteButtonCol = new DataGridViewButtonColumn();
-            DataGridViewButtonColumn addToPlannerButtonCol = new DataGridViewButtonColumn();
-
-            viewButtonCol.HeaderText = "";
-            editButtonCol.HeaderText = "";
-            deleteButtonCol.HeaderText = "";
-            addToPlannerButtonCol.HeaderText = "";
-
-            viewButtonCol.UseColumnTextForButtonValue = true;
-            editButtonCol.UseColumnTextForButtonValue = true;
-            deleteButtonCol.UseColumnTextForButtonValue = true;
-            addToPlannerButtonCol.UseColumnTextForButtonValue = true;
-
-            viewButtonCol.Text = "View";
-            editButtonCol.Text = "Edit";
-            deleteButtonCol.Text = "Delete";
-            addToPlannerButtonCol.Text = "Add to Planner";
-
-            //.DataSource = Book.Recipes.ToList();
-            var recipeViewList = Book.Recipes.OrderBy(n => n.Name).Select(n => new
-            {
-                n.Name,
-                n.Description,
-                n.TotalTime
-            }).ToList();
-            dataGridViewRecipes.DataSource = recipeViewList;
-
-            dataGridViewRecipes.Columns.Add(viewButtonCol);
-            dataGridViewRecipes.Columns.Add(editButtonCol);
-            dataGridViewRecipes.Columns.Add(deleteButtonCol);
-            dataGridViewRecipes.Columns.Add(addToPlannerButtonCol);
+            refreshDataGrid();
 
             displayCategories();
         }
@@ -101,6 +67,8 @@ namespace recipe_organizer
 
         private void displayCategories()
         {
+            listViewRecipeCategory.Items.Clear();
+
             List<string> categories = new List<string>();
 
             foreach (Recipe recipe in Book.Recipes)
@@ -127,6 +95,15 @@ namespace recipe_organizer
         //Save recipe data on window closure
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
+            saveData();
+        }
+
+        private void saveData()
+        {
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Data\\data.json"))
+            {
+                File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Data\\data.json");
+            }
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Data\\data.json";
             string json = JsonConvert.SerializeObject(Book.Recipes, Formatting.Indented);
             File.WriteAllText(path, json);
@@ -138,8 +115,15 @@ namespace recipe_organizer
             const int editIndex = 4;
             const int deleteIndex = 5;
             const int plannerIndex = 6;
+            string recipeName;
+            try
+            {
+                recipeName = dataGridViewRecipes.Rows[e.RowIndex].Cells[0].Value.ToString();
+            } catch (ArgumentOutOfRangeException)
+            {
+                return;
+            }
 
-            string? recipeName = dataGridViewRecipes.Rows[e.RowIndex].Cells[0].Value.ToString();
 
             if (e.ColumnIndex == viewIndex)
             {
@@ -157,7 +141,6 @@ namespace recipe_organizer
             {
                 Recipe? recipe = Book.Recipes.Find(r => r.Name == recipeName);
                 Book.Delete(recipe);
-                refreshDataGrid();
                 //MessageBox.Show("Deleting the recipe: " + recipeName);
             }
 
@@ -165,6 +148,10 @@ namespace recipe_organizer
             {
                 MessageBox.Show("Planning the recipe: " + recipeName);
             }
+
+            saveData();
+            refreshDataGrid();
+            displayCategories();
         }
 
         private void importToolStripMenuItem_Click(object sender, EventArgs e)
@@ -285,6 +272,31 @@ namespace recipe_organizer
 
         private void refreshDataGrid()
         {
+            dataGridViewRecipes.Columns.Clear();
+
+            //groupBoxShopList.Visible = false;
+
+            DataGridViewButtonColumn viewButtonCol = new DataGridViewButtonColumn();
+            DataGridViewButtonColumn editButtonCol = new DataGridViewButtonColumn();
+            DataGridViewButtonColumn deleteButtonCol = new DataGridViewButtonColumn();
+            DataGridViewButtonColumn addToPlannerButtonCol = new DataGridViewButtonColumn();
+
+            viewButtonCol.HeaderText = "";
+            editButtonCol.HeaderText = "";
+            deleteButtonCol.HeaderText = "";
+            addToPlannerButtonCol.HeaderText = "";
+
+            viewButtonCol.UseColumnTextForButtonValue = true;
+            editButtonCol.UseColumnTextForButtonValue = true;
+            deleteButtonCol.UseColumnTextForButtonValue = true;
+            addToPlannerButtonCol.UseColumnTextForButtonValue = true;
+
+            viewButtonCol.Text = "View";
+            editButtonCol.Text = "Edit";
+            deleteButtonCol.Text = "Delete";
+            addToPlannerButtonCol.Text = "Add to Planner";
+
+            //.DataSource = Book.Recipes.ToList();
             var recipeViewList = Book.Recipes.OrderBy(n => n.Name).Select(n => new
             {
                 n.Name,
@@ -292,6 +304,11 @@ namespace recipe_organizer
                 n.TotalTime
             }).ToList();
             dataGridViewRecipes.DataSource = recipeViewList;
+
+            dataGridViewRecipes.Columns.Add(viewButtonCol);
+            dataGridViewRecipes.Columns.Add(editButtonCol);
+            dataGridViewRecipes.Columns.Add(deleteButtonCol);
+            dataGridViewRecipes.Columns.Add(addToPlannerButtonCol);
         }
 
         private void btnShareRecipe_Click(object sender, EventArgs e)
@@ -358,7 +375,13 @@ namespace recipe_organizer
         
         private void createNewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+           Recipe recipe = new Recipe();
+           AddEditRecipeForm form = new AddEditRecipeForm(false, recipe);
+           form.ShowDialog();
+           Book.Add(recipe);
+           refreshDataGrid();
+           displayCategories();
+           saveData();
         }
 
         //private void listViewRecipeCategory_SelectedIndexChanged(object sender, EventArgs e)

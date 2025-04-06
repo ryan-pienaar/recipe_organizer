@@ -38,7 +38,7 @@ namespace recipe_organizer
         {
             Name = "";
             Description = "";
-            PhotoFilePath = "";
+            PhotoFilePath = "temp_image.png";
             PrepTime = 0;
             CookTime = 0;
             Categories = new List<string>();
