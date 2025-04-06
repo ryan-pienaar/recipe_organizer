@@ -62,8 +62,14 @@ namespace recipe_organizer
             {
                 lbxAddEditInstructions.Items.Add(instruction);
             }
-            picBoxAddEditImage.Image = Image.FromFile(imageEvnironmentPath + "" + recipe.PhotoFilePath);
-            //Make the image fit the picture box
+            if (File.Exists(path + "\\Data\\Images\\" + recipe.PhotoFilePath))
+            {
+                selectedImagePath = path + "\\Data\\Images\\" + recipe.PhotoFilePath;
+            }
+            else
+            {
+                selectedImagePath = path + "\\Data\\Images\\temp_image.png";
+            }
             picBoxAddEditImage.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
