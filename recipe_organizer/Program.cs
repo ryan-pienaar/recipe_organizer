@@ -36,6 +36,17 @@ namespace recipe_organizer
                 JSONData = File.ReadAllText(path + "\\Data\\data.json");
             }
 
+            string JSONPlanner = "";
+
+            if (!File.Exists(path + "\\Data\\planner.json"))
+            {
+                File.Create(path + "\\Data\\planner.json").Close();
+            }
+            else
+            {
+                JSONPlanner = File.ReadAllText(path + "\\Data\\planner.json");
+            }
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();

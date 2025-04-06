@@ -168,6 +168,7 @@
             // 
             // picBoxAddEditImage
             // 
+            picBoxAddEditImage.BorderStyle = BorderStyle.FixedSingle;
             picBoxAddEditImage.Location = new Point(362, 12);
             picBoxAddEditImage.Name = "picBoxAddEditImage";
             picBoxAddEditImage.Size = new Size(236, 193);

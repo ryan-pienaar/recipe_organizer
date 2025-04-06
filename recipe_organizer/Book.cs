@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace recipe_organizer
     public class Book
     {
         public List<Recipe> Recipes { get; set; }
+        public Dictionary<DateOnly, Recipe> Planner { get; set; } = new Dictionary<DateOnly, Recipe>();
 
         public Book() { 
             Recipes = new List<Recipe>();
@@ -18,6 +20,23 @@ namespace recipe_organizer
         public Book(string JSONFilePath)
         {
             ImportRecipes(JSONFilePath);
+        }
+
+        public void ImportPlanner(string JSONFilePath)
+        {
+            string JSONString = System.IO.File.ReadAllText(JSONFilePath);
+            Dictionary<DateOnly, Recipe> ImportedPlanner = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<DateOnly, Recipe>>(JSONString);
+            foreach (KeyValuePair<DateOnly, Recipe> entry in ImportedPlanner)
+            {
+                if (Planner.ContainsKey(entry.Key))
+                {
+                    continue;
+                }
+                else
+                {
+                    Planner.Add(entry.Key, entry.Value);
+                }
+            }
         }
 
         public void ImportRecipes(string JSONFilePath)

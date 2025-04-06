@@ -4,6 +4,12 @@
     <Compile Update="AddEditRecipeForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PlannerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

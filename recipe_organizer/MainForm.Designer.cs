@@ -35,7 +35,6 @@
             singleRecipeToolStripMenuItem = new ToolStripMenuItem();
             allRecipesToolStripMenuItem = new ToolStripMenuItem();
             searchToolStripMenuItem = new ToolStripMenuItem();
-            byCategoryToolStripMenuItem = new ToolStripMenuItem();
             recipeToolStripMenuItem = new ToolStripMenuItem();
             createNewToolStripMenuItem = new ToolStripMenuItem();
             plannerToolStripMenuItem = new ToolStripMenuItem();
@@ -102,16 +101,10 @@
             // 
             // searchToolStripMenuItem
             // 
-            searchToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { byCategoryToolStripMenuItem });
             searchToolStripMenuItem.Name = "searchToolStripMenuItem";
             searchToolStripMenuItem.Size = new Size(54, 20);
             searchToolStripMenuItem.Text = "Search";
-            // 
-            // byCategoryToolStripMenuItem
-            // 
-            byCategoryToolStripMenuItem.Name = "byCategoryToolStripMenuItem";
-            byCategoryToolStripMenuItem.Size = new Size(138, 22);
-            byCategoryToolStripMenuItem.Text = "By Category";
+            searchToolStripMenuItem.Click += searchToolStripMenuItem_Click;
             // 
             // recipeToolStripMenuItem
             // 
@@ -123,7 +116,7 @@
             // createNewToolStripMenuItem
             // 
             createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
-            createNewToolStripMenuItem.Size = new Size(180, 22);
+            createNewToolStripMenuItem.Size = new Size(135, 22);
             createNewToolStripMenuItem.Text = "Create New";
             createNewToolStripMenuItem.Click += createNewToolStripMenuItem_Click;
             // 
@@ -132,10 +125,10 @@
             plannerToolStripMenuItem.Name = "plannerToolStripMenuItem";
             plannerToolStripMenuItem.Size = new Size(59, 20);
             plannerToolStripMenuItem.Text = "Planner";
+            plannerToolStripMenuItem.Click += plannerToolStripMenuItem_Click;
             // 
             // listViewRecipeCategory
             // 
-            listViewRecipeCategory.CheckBoxes = true;
             listViewRecipeCategory.Columns.AddRange(new ColumnHeader[] { colCategories });
             listViewRecipeCategory.FullRowSelect = true;
             listViewRecipeCategory.GridLines = true;
@@ -147,10 +140,11 @@
             listViewRecipeCategory.TabIndex = 2;
             listViewRecipeCategory.UseCompatibleStateImageBehavior = false;
             listViewRecipeCategory.View = View.Details;
+            listViewRecipeCategory.SelectedIndexChanged += listViewRecipeCategory_SelectedIndexChanged;
             // 
             // colCategories
             // 
-            colCategories.Text = "All Categories:";
+            colCategories.Text = "Categories:";
             colCategories.Width = 141;
             // 
             // colCategory
@@ -192,7 +186,6 @@
             // 
             // rtbShopList
             // 
-            rtbShopList.Enabled = false;
             rtbShopList.Location = new Point(6, 22);
             rtbShopList.Name = "rtbShopList";
             rtbShopList.Size = new Size(208, 141);
@@ -272,7 +265,6 @@
         private ToolStripMenuItem allRecipesToolStripMenuItem;
         private ToolStripMenuItem searchToolStripMenuItem;
         private ToolStripMenuItem plannerToolStripMenuItem;
-        private ToolStripMenuItem byCategoryToolStripMenuItem;
         private ToolStripMenuItem recipeToolStripMenuItem;
         private ToolStripMenuItem createNewToolStripMenuItem;
         private ListView listViewRecipeCategory;

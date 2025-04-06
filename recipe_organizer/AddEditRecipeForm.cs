@@ -98,7 +98,7 @@ namespace recipe_organizer
                     recipe.Instructions.Add(item.ToString());
                 }
             }
-
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 

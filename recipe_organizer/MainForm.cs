@@ -10,6 +10,8 @@ namespace recipe_organizer
     {
 
         Book Book = new Book();
+        Book FilteredBook = new Book();
+        Book CurrentBook;
 
         public MainForm(string JSONData)
         {
@@ -19,8 +21,9 @@ namespace recipe_organizer
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            CurrentBook = Book;
 
-            refreshDataGrid();
+            refreshDataGrid(CurrentBook);
 
             displayCategories();
         }
@@ -58,10 +61,26 @@ namespace recipe_organizer
                 {
                     Book.ImportRecipes(path);
                 }
+
+                
             }
             else
             {
                 MessageBox.Show("DATA_ERR: Uh oh. Something went wrong :(");
+            }
+
+            string plannerPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Data\\planner.json";
+            if (File.Exists(plannerPath))
+            {
+                string plannerJSON = File.ReadAllText(plannerPath);
+                if (plannerJSON != "")
+                {
+                    Book.ImportPlanner(plannerPath);
+                }
+            }
+            else
+            {
+                MessageBox.Show("PLANNER_ERR: Uh oh. Something went wrong :(");
             }
         }
 
@@ -70,6 +89,8 @@ namespace recipe_organizer
             listViewRecipeCategory.Items.Clear();
 
             List<string> categories = new List<string>();
+
+            categories.Add("All Recipes");
 
             foreach (Recipe recipe in Book.Recipes)
             {
@@ -107,6 +128,15 @@ namespace recipe_organizer
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Data\\data.json";
             string json = JsonConvert.SerializeObject(Book.Recipes, Formatting.Indented);
             File.WriteAllText(path, json);
+
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Data\\planner.json"))
+            {
+                File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Data\\planner.json");
+            }
+
+            string plannerPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\RecipeOrganizer\\Data\\planner.json";
+            string plannerJson = JsonConvert.SerializeObject(Book.Planner, Formatting.Indented);
+            File.WriteAllText(plannerPath, plannerJson);
         }
 
         private void dataGridViewRecipes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -119,7 +149,8 @@ namespace recipe_organizer
             try
             {
                 recipeName = dataGridViewRecipes.Rows[e.RowIndex].Cells[0].Value.ToString();
-            } catch (ArgumentOutOfRangeException)
+            }
+            catch (ArgumentOutOfRangeException)
             {
                 return;
             }
@@ -127,7 +158,9 @@ namespace recipe_organizer
 
             if (e.ColumnIndex == viewIndex)
             {
-                MessageBox.Show("Viewing the recipe: " + recipeName);
+                Recipe? recipe = Book.Recipes.Find(r => r.Name == recipeName);
+                ViewForm form = new ViewForm(recipe);
+                form.ShowDialog();
             }
 
             if (e.ColumnIndex == editIndex)
@@ -141,16 +174,29 @@ namespace recipe_organizer
             {
                 Recipe? recipe = Book.Recipes.Find(r => r.Name == recipeName);
                 Book.Delete(recipe);
-                //MessageBox.Show("Deleting the recipe: " + recipeName);
             }
 
             if (e.ColumnIndex == plannerIndex)
             {
-                MessageBox.Show("Planning the recipe: " + recipeName);
+                Recipe? recipe = Book.Recipes.Find(r => r.Name == recipeName);
+                DateOnly date = DateOnly.MinValue;
+                try
+                {
+                    date = DateOnly.Parse(Microsoft.VisualBasic.Interaction.InputBox("Enter a date (MM/DD/YYYY):", "Add to Planner", "", -1, -1));
+                } catch (FormatException)
+                {
+                    MessageBox.Show("Please enter the correct date format");
+                }
+                
+                if (date == DateOnly.MinValue)
+                {
+                    return;
+                }
+                Book.Planner.Add(date, recipe);
             }
 
             saveData();
-            refreshDataGrid();
+            refreshDataGrid(CurrentBook);
             displayCategories();
         }
 
@@ -165,16 +211,16 @@ namespace recipe_organizer
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 selectedFilePath = openFileDialog.FileName;
-                //MessageBox.Show("Selected file: " + selectedFilePath);
+                Book.ImportRecipes(selectedFilePath);
+                var recipeViewList = Book.Recipes.OrderBy(n => n.Name).Select(n => new
+                {
+                    n.Name,
+                    n.Description,
+                    n.TotalTime
+                }).ToList();
+                dataGridViewRecipes.DataSource = recipeViewList;
             }
-            Book.ImportRecipes(selectedFilePath);
-            var recipeViewList = Book.Recipes.OrderBy(n => n.Name).Select(n => new
-            {
-                n.Name,
-                n.Description,
-                n.TotalTime
-            }).ToList();
-            dataGridViewRecipes.DataSource = recipeViewList;
+
         }
 
         private void OpenFileDialog_FileOk(object? sender, System.ComponentModel.CancelEventArgs e)
@@ -270,7 +316,7 @@ namespace recipe_organizer
 
         }
 
-        private void refreshDataGrid()
+        private void refreshDataGrid(Book srcBook)
         {
             dataGridViewRecipes.Columns.Clear();
 
@@ -297,7 +343,7 @@ namespace recipe_organizer
             addToPlannerButtonCol.Text = "Add to Planner";
 
             //.DataSource = Book.Recipes.ToList();
-            var recipeViewList = Book.Recipes.OrderBy(n => n.Name).Select(n => new
+            var recipeViewList = srcBook.Recipes.OrderBy(n => n.Name).Select(n => new
             {
                 n.Name,
                 n.Description,
@@ -372,45 +418,80 @@ namespace recipe_organizer
 
             File.WriteAllText(selectedFilePath, recipeShareString);
         }
-        
+
         private void createNewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           Recipe recipe = new Recipe();
-           AddEditRecipeForm form = new AddEditRecipeForm(false, recipe);
-           form.ShowDialog();
-           Book.Add(recipe);
-           refreshDataGrid();
-           displayCategories();
-           saveData();
+            Recipe recipe = new Recipe();
+            AddEditRecipeForm form = new AddEditRecipeForm(false, recipe);
+            form.ShowDialog();
+            if (form.DialogResult != DialogResult.OK)
+            {
+                return;
+            }
+            Book.Add(recipe);
+            refreshDataGrid(CurrentBook);
+            displayCategories();
+            saveData();
         }
 
-        //private void listViewRecipeCategory_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (listViewRecipeCategory.SelectedIndices.Count == 0)
-        //    {
+        private void listViewRecipeCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewRecipeCategory.SelectedItems.Count == 0 || listViewRecipeCategory.SelectedItems[0].Text == "All Recipes")
+            {
+                CurrentBook = Book;
+            }
+            else
+            {
+                foreach (ListViewItem item in listViewRecipeCategory.SelectedItems)
+                {
+                    string category = item.Text;
+                    FilteredBook.Recipes.Clear();
+                    foreach (Recipe recipe in Book.Recipes)
+                    {
+                        if (recipe.Categories.Contains(category))
+                        {
+                            FilteredBook.Recipes.Add(recipe);
+                        }
+                    }
 
-        //        MessageBox.Show
-        //        (
-        //                        "Error: Please select a category",
-        //                        "Error  ",
-        //                        MessageBoxButtons.OK,
-        //                        MessageBoxIcon.Exclamation,
-        //                        MessageBoxDefaultButton.Button1
-        //        );
+                }
+                CurrentBook = FilteredBook;
+            }
+            refreshDataGrid(CurrentBook);
+        }
 
-        //    }
-        //    else
-        //    {
-        //        string categoryChose = listViewRecipeCategory.SelectedItems[0].Text;
-        //        if (!string.IsNullOrEmpty(categoryChose))
-        //        {
-        //            groupBoxShopList.Visible = true;
-        //        }
-        //        else
-        //        {
-        //            groupBoxShopList.Visible = false;
-        //        }
-        //    }
-        //}
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string searchString = Microsoft.VisualBasic.Interaction.InputBox("Enter a recipe name:", "Search", "", -1, -1);
+            if (searchString == "")
+            {
+                return;
+            }
+            FilteredBook.Recipes.Clear();
+            foreach (Recipe recipe in Book.Recipes)
+            {
+                if (recipe.Name.ToLower().Contains(searchString.ToLower()))
+                {
+                    FilteredBook.Recipes.Add(recipe);
+                }
+            }
+            if (FilteredBook.Recipes.Count == 0)
+            {
+                MessageBox.Show("No recipes found.");
+                CurrentBook = Book;
+            }
+            else
+            {
+                CurrentBook = FilteredBook;
+            }
+            refreshDataGrid(CurrentBook);
+            displayCategories();
+        }
+
+        private void plannerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PlannerForm plannerForm = new PlannerForm(Book.Planner);
+            plannerForm.ShowDialog();
+        }
     }
 }
