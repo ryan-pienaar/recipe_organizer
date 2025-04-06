@@ -19,7 +19,14 @@ namespace recipe_organizer
         {
             InitializeComponent();
             this.recipe = recipe;
-            picBoxView.Image = Image.FromFile(imageEvnironmentPath + "" + recipe.PhotoFilePath);
+            if (File.Exists(imageEvnironmentPath + recipe.PhotoFilePath))
+            {
+                picBoxView.Image = Image.FromFile(imageEvnironmentPath + recipe.PhotoFilePath);
+            }
+            else
+            {
+                picBoxView.Image = Image.FromFile(imageEvnironmentPath + "temp_image.png");
+            }
             picBoxView.SizeMode = PictureBoxSizeMode.StretchImage;
             lblViewRecipeNameHere.Text = recipe.Name;
             rtbViewDescription.Text = recipe.Description;
