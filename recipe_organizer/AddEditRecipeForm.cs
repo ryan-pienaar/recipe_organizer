@@ -70,6 +70,7 @@ namespace recipe_organizer
             {
                 selectedImagePath = path + "\\Data\\Images\\temp_image.png";
             }
+            picBoxAddEditImage.Image = Image.FromFile(selectedImagePath);
             picBoxAddEditImage.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
